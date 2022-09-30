@@ -21,8 +21,8 @@ export function Roadmap({ children }: RoadmapProps) {
           width: 260,
           height: 170,
           borderRadius: '10px',
-          marginTop: 5,
-          marginLeft: '12.5rem',
+          mt: 3,
+          ml: '12.5rem',
         }}
       >
         <CardContent>

@@ -3,6 +3,7 @@ import { Feedbackboard } from '@product_feedback/scope.cards.feedbackboard';
 import { Roadmap } from '@product_feedback/scope.cards.roadmap';
 import React from 'react';
 import { Stack } from '@mui/material';
+import ChipGroup from './ChipGroup';
 
 type Props = {};
 
@@ -12,6 +13,7 @@ const Home = (props: Props) => {
       <Stack direction="row">
         <Stack direction="column">
           <Feedbackboard />
+          <ChipGroup />
           <Roadmap />
         </Stack>
         <Dropdownnavbar />

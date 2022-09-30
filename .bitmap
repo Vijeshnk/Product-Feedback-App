@@ -27,6 +27,12 @@
         "mainFile": "index.ts",
         "rootDir": "scope/cards/roadmap"
     },
+    "chips/styledchip": {
+        "scope": "product_feedback.scope",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "scope/chips/styledchip"
+    },
     "navbar/dropdownnavbar": {
         "scope": "product_feedback.scope",
         "version": "0.0.1",
