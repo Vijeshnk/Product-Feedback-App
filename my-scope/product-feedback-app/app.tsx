@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { createTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import Home from './components/Home';
+import Home from './pages/Home';
 import { red } from '@mui/material/colors';
 
 export function ProductFeedbackAppApp() {
