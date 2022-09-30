@@ -3,7 +3,7 @@ import { Feedbackboard } from '@product_feedback/scope.cards.feedbackboard';
 import { Roadmap } from '@product_feedback/scope.cards.roadmap';
 import React from 'react';
 import { Stack } from '@mui/material';
-import ChipGroup from './ChipGroup';
+import ChipGroup from '../components/ChipGroup';
 
 type Props = {};
 
