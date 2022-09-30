@@ -8,7 +8,7 @@ export function ProductFeedbackAppApp() {
   const theme = createTheme({
     palette: {
       background: {
-        default: red[300],
+        default: '#f2f2f2',
       },
       // `#f2f2f2`
     },
