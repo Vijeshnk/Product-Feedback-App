@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import EditFeedback from './pages/EditFeedback';
 import Home from './pages/Home';
 
 export function ProductFeedbackAppApp() {
@@ -11,7 +12,7 @@ export function ProductFeedbackAppApp() {
           {/* home page component */}
         </Route>
 
-        <Route path="/about">{/* about page component */}</Route>
+        <Route path="/edit_page" element={<EditFeedback/>}>{/* about page component */}</Route>
       </Routes>
       {/* footer component */}
     </>
