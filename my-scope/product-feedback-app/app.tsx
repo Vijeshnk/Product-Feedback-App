@@ -1,14 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Dropdownnavbar } from '@product_feedback/scope.navbar.dropdownnavbar';
+import Home from './components/Home';
 
 export function ProductFeedbackAppApp() {
   return (
     <>
       {/* header component */}
-      {/* <Dropdownnavbar /> */}
       <Routes>
-        <Route path="/" element={<Dropdownnavbar />}>
+        <Route path="/" element={<Home />}>
           {/* home page component */}
         </Route>
 

@@ -33,18 +33,20 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Box sx={{ mt: 15, ml: 20, mr: 20 }}>
-          <AppBar position="static" sx={{ borderRadius: '15px' }}>
+        <Box sx={{ mt: 15, ml: 5, mr: 30 }}>
+          <AppBar position="static" sx={{ borderRadius: '13px' }}>
             <Toolbar>
               <LightbulbCircleOutlined />
 
-              <Typography sx={{ ml: 2, mr: 4 }}>4 Suggetions</Typography>
-              <Typography sx={{ fontSize: 14 }}>&nbsp; Sort by : </Typography>
+              <Typography sx={{ ml: 2 }}>4 Suggetions</Typography>
+              <Typography sx={{ ml: 2, fontSize: 14 }}>
+                &nbsp; Sort by :{' '}
+              </Typography>
               <FormControl>
                 <Select
                   value={commentValue}
                   onChange={handleChange}
-                  sx={{ color: 'white' }}
+                  sx={{ color: 'white', mr: 35 }}
                 >
                   <MenuItem value={1}>Most Upvotes</MenuItem>
                   <MenuItem value={2}>Least Upvotes</MenuItem>
@@ -52,9 +54,9 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                   <MenuItem value={4}>Least Comments</MenuItem>
                 </Select>
               </FormControl>
-              <div style={{ marginLeft: '35rem' }}>
-                <Appbutton>+ Add Feedback</Appbutton>
-              </div>
+              {/* <div style={{ marginLeft: '35rem' }}> */}
+              <Appbutton sx={{ ml: 20 }}>+ Add Feedback</Appbutton>
+              {/* </div> */}
             </Toolbar>
           </AppBar>
         </Box>
