@@ -9,6 +9,12 @@
  */
 
 {
+    "apps/feedbackdropdown": {
+        "scope": "product_feedback.scope",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "scope/apps/feedbackdropdown"
+    },
     "buttons/appbutton": {
         "scope": "product_feedback.scope",
         "version": "0.0.2",
