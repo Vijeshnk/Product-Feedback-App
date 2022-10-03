@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import EditFeedback from './pages/EditFeedback';
 import { CssBaseline } from '@mui/material';
 import './assets/css/jost.css';
+import CommentSection from './pages/CommentSection';
 
 export function ProductFeedbackAppApp() {
   const theme = createTheme({
@@ -25,18 +26,17 @@ export function ProductFeedbackAppApp() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* header component */}
         <Routes>
-          <Route path="/" element={<Home />}>
-            {/* home page component */}
-          </Route>
+          <Route path="/" element={<Home />}></Route>
 
           <Route path="/feedback" element={<EditFeedback />}>
             {' '}
-            {/* about page component */}
+          </Route>
+
+          <Route path="/comments" element={<CommentSection />}>
+            {' '}
           </Route>
         </Routes>
-        {/* footer component */}
       </ThemeProvider>
     </>
   );
