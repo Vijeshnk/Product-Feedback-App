@@ -5,6 +5,9 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Paper, TextField, Typography } from '@mui/material';
 
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageList from '@mui/material/ImageList';
+
 export type FeedbackdropdownProps = {
   /**
    * a node to be rendered in the special component.
@@ -21,7 +24,11 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
   return (
     <div>
-      <Paper sx={{mt:22,mx:45}}>
+       <ImageList sx={{position:'relative', left:'400px', top:'170px'}}>
+      <img  src='https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg'/>
+      </ImageList>
+
+      <Paper sx={{mt:18,mx:45,borderRadius:3}}>
         <Typography sx={{fontSize:22,pt:5,ml:5,fontWeight:'bold',color:'#3A4373'}}>Create New Feedback</Typography>
         <Typography sx={{fontSize:15,ml:5,fontWeight:'bold',mt:3,color:'#3A4373'}}>Feedback Title</Typography>
         <Typography sx={{fontSize:12,ml:5,fontWeight:'bold',color:'#647196'}}>Add a short, descriptive headline</Typography>
