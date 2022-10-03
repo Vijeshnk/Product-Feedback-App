@@ -14,10 +14,18 @@ export type FeedbackboardProps = {
 export function Feedbackboard({ children }: FeedbackboardProps) {
   return (
     <div>
-      <Card sx={{ width: 260, mt: 15, ml: 25, borderRadius: '10px' }}>
+      <Card
+        sx={{
+          width: 260,
+          mt: 12,
+          ml: 25,
+          borderRadius: '10px',
+          boxShadow: 'none',
+        }}
+      >
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="Feedback Mentor"
           height="140"
           image="https://product-feedback-app.herokuapp.com/static/media/background-header.bc782ba0.png"
         />
@@ -26,10 +34,10 @@ export function Feedbackboard({ children }: FeedbackboardProps) {
           style={{
             position: 'absolute',
             color: 'white',
-            top: 190,
+            top: 165,
             marginLeft: 28,
             fontSize: '1.3rem',
-            fontWeight: 'bold',
+            fontWeight: 700,
           }}
         >
           Frontend Mentor{' '}
@@ -38,7 +46,7 @@ export function Feedbackboard({ children }: FeedbackboardProps) {
           style={{
             position: 'absolute',
             color: 'hsl(231, 100%, 97%)',
-            top: 220,
+            top: 195,
             marginLeft: 28,
             fontSize: '0.9rem',
           }}

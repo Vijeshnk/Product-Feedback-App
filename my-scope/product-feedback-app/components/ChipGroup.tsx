@@ -6,6 +6,7 @@ type Props = {};
 
 const ChipGroup = (props: Props) => {
   const [chip, setChip] = useState(false);
+  const chipSet = ['All', 'UI', 'UX', 'Enhancement', 'Bug', 'Feature'];
   return (
     <>
       <Card
@@ -15,16 +16,15 @@ const ChipGroup = (props: Props) => {
           mt: 3,
           borderRadius: '10px',
           ml: '12.5rem',
+          fontWeight: 600,
+          boxShadow: 'none',
         }}
       >
         <CardContent>
           <Stack direction="row" sx={{ flexWrap: 'wrap' }}>
-            <Styledchip>All</Styledchip>
-            <Styledchip>UI</Styledchip>
-            <Styledchip>UX</Styledchip>
-            <Styledchip>Enhancement</Styledchip>
-            <Styledchip>Bug</Styledchip>
-            <Styledchip>Feature</Styledchip>
+            {chipSet.map((value) => {
+              return <Styledchip key={value}>{value}</Styledchip>;
+            })}
           </Stack>
         </CardContent>
       </Card>

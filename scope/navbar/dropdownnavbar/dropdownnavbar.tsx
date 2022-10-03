@@ -3,12 +3,16 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Typography } from '@mui/material';
+import { Menu, Typography } from '@mui/material';
 import LightbulbCircleOutlined from '@mui/icons-material/LightbulbCircleOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Appbutton } from '@product_feedback/scope.buttons.appbutton';
+import { Divider } from '@mui/material';
+import { Button } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 let theme = createTheme({
   palette: {
@@ -25,38 +29,128 @@ export type DropdownnavbarProps = {
 };
 
 export function Dropdownnavbar({ children }: DropdownnavbarProps) {
-  const [commentValue, setcommentValue] = React.useState('');
+  const [commentValue, setcommentValue] = React.useState('Most Upvotes');
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setcommentValue(event.target.value as string);
+  const handleChange = (event) => {
+    setcommentValue(event.target.id);
   };
+
+  const handleClose = () => {
+    setOpen(!open);
+  };
+  const handleIconChange = () => {
+    return open ? (
+      <KeyboardArrowDownIcon htmlColor="#fff" />
+    ) : (
+      <KeyboardArrowUpIcon htmlColor="#fff" />
+    );
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleFunctions = (event) => {
+    handleClose(), handleClick(event);
+  };
+
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Box sx={{ mt: 15, ml: 5, mr: 30 }}>
-          <AppBar position="static" sx={{ borderRadius: '13px' }}>
+        <Box sx={{ mt: 12, ml: 4, flexGrow: 1 }}>
+          <AppBar
+            position="static"
+            sx={{ borderRadius: '10px', boxShadow: 'none' }}
+          >
             <Toolbar>
               <LightbulbCircleOutlined />
 
-              <Typography sx={{ ml: 2 }}>4 Suggetions</Typography>
-              <Typography sx={{ ml: 2, fontSize: 14 }}>
-                &nbsp; Sort by :{' '}
+              <Typography sx={{ ml: 2, fontWeight: 700, fontFamily: 'Jost' }}>
+                4 Suggetions
+              </Typography>
+              <Typography
+                sx={{
+                  ml: 2,
+                  fontFamily: 'Jost',
+                  fontWeight: 500,
+                  fontSize: 14,
+                }}
+              >
+                Sort by :{' '}
               </Typography>
               <FormControl>
-                <Select
-                  value={commentValue}
-                  onChange={handleChange}
-                  sx={{ color: 'white', mr: 35 }}
-                >
-                  <MenuItem value={1}>Most Upvotes</MenuItem>
-                  <MenuItem value={2}>Least Upvotes</MenuItem>
-                  <MenuItem value={3}>Most Comments</MenuItem>
-                  <MenuItem value={4}>Least Comments</MenuItem>
-                </Select>
+                <Button onClick={handleFunctions} endIcon={handleIconChange()}>
+                  <Typography
+                    color="#fff"
+                    sx={{
+                      textTransform: 'capitalize',
+                      fontSize: 14,
+                      fontFamily: 'Jost',
+                      fontWeight: 700,
+                    }}
+                  >
+                    {commentValue}
+                  </Typography>
+                </Button>
+                <Menu open={open} onClick={handleClose} anchorEl={anchorEl}>
+                  <MenuItem
+                    id={'Most Upvotes'}
+                    onClick={handleChange}
+                    sx={{
+                      ':hover': {
+                        color: 'hsl(282, 83%, 52%)',
+                        backgroundColor: '#fff',
+                      },
+                    }}
+                  >
+                    Most Upvotes
+                  </MenuItem>
+                  <Divider />
+                  <MenuItem
+                    id={'Least Upvotes'}
+                    onClick={handleChange}
+                    sx={{
+                      ':hover': {
+                        color: 'hsl(282, 83%, 52%)',
+                        backgroundColor: '#fff',
+                      },
+                    }}
+                  >
+                    Least Upvotes
+                  </MenuItem>
+                  <Divider />
+                  <MenuItem
+                    id={'Most Comments'}
+                    onClick={handleChange}
+                    sx={{
+                      ':hover': {
+                        color: 'hsl(282, 83%, 52%)',
+                        backgroundColor: '#fff',
+                      },
+                    }}
+                  >
+                    Most Comments
+                  </MenuItem>
+                  <Divider />
+                  <MenuItem
+                    id={'Least Comments'}
+                    onClick={handleChange}
+                    sx={{
+                      ':hover': {
+                        color: 'hsl(282, 83%, 52%)',
+                        backgroundColor: '#fff',
+                      },
+                    }}
+                  >
+                    Least Comments
+                  </MenuItem>
+                </Menu>
               </FormControl>
-              {/* <div style={{ marginLeft: '35rem' }}> */}
-              <Appbutton sx={{ ml: 20 }}>+ Add Feedback</Appbutton>
-              {/* </div> */}
+              <div style={{ marginLeft: '18rem' }}>
+                <Appbutton>+ Add Feedback</Appbutton>
+              </div>
             </Toolbar>
           </AppBar>
         </Box>

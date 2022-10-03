@@ -24,6 +24,7 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText('hsl(282, 83%, 52%)'),
   backgroundColor: 'hsl(282, 83%, 52%)',
   borderRadius: '10px',
+  fontFamily: 'Jost',
   '&:hover': {
     backgroundColor: 'hsl(282, 83%, 52%)',
   },
@@ -32,7 +33,14 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
 export function Appbutton({ children, ...rest }: AppbuttonProps) {
   return (
     <div>
-      <ColorButton variant="contained" sx={{ fontWeight: 'bold' }}>
+      <ColorButton
+        variant="contained"
+        sx={{
+          fontWeight: 600,
+          fontSize: '15px',
+          textTransform: 'capitalize',
+        }}
+      >
         {children}
       </ColorButton>
     </div>

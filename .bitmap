@@ -21,6 +21,12 @@
         "mainFile": "index.ts",
         "rootDir": "scope/buttons/appbutton"
     },
+    "buttons/votebutton": {
+        "scope": "product_feedback.scope",
+        "version": "0.0.3",
+        "mainFile": "index.ts",
+        "rootDir": "scope/buttons/votebutton"
+    },
     "cards/feedbackboard": {
         "scope": "product_feedback.scope",
         "version": "0.0.2",
@@ -38,6 +44,12 @@
         "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "scope/chips/styledchip"
+    },
+    "icons/commenticon": {
+        "scope": "product_feedback.scope",
+        "version": "0.0.3",
+        "mainFile": "index.ts",
+        "rootDir": "scope/icons/commenticon"
     },
     "navbar/dropdownnavbar": {
         "scope": "product_feedback.scope",

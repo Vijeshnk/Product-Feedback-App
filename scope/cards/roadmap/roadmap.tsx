@@ -23,6 +23,7 @@ export function Roadmap({ children }: RoadmapProps) {
           borderRadius: '10px',
           mt: 3,
           ml: '12.5rem',
+          boxShadow: 'none',
         }}
       >
         <CardContent>
@@ -34,21 +35,34 @@ export function Roadmap({ children }: RoadmapProps) {
             <Grid item xs={6}>
               <List sx={{ listStyleType: 'disc', ml: -1 }}>
                 <ListItem
-                  sx={{ fontWeight: 'bold', fontSize: '1.3rem', mt: -1.5 }}
+                  sx={{
+                    fontWeight: 650,
+                    fontSize: '1.2rem',
+                    mt: -1.5,
+                    color: 'hsl(230.7, 33.3%, 34.1%)',
+                  }}
                 >
                   Roadmap
                 </ListItem>
               </List>
             </Grid>
             <Grid item xs={6}>
-              <List sx={{ listStyleType: 'disc', ml: 6, mt: -1 }}>
-                <ListItem sx={{ p: -3 }}>
-                  <a href="#">view</a>
+              <List sx={{ listStyleType: 'disc', ml: 6, mt: -1.2 }}>
+                <ListItem
+                  sx={{
+                    p: -3,
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  <a href="#" style={{ color: 'blue' }}>
+                    View
+                  </a>
                 </ListItem>
               </List>
             </Grid>
             <Grid item xs={6}>
-              <List sx={{ listStyleType: 'disc', ml: 1, mt: -2.8 }}>
+              <List sx={{ listStyleType: 'disc', ml: 1, mt: -4 }}>
                 <ListItem
                   sx={{
                     display: 'list-item',
@@ -60,8 +74,9 @@ export function Roadmap({ children }: RoadmapProps) {
                   <Typography
                     sx={{
                       color: 'hsl(224, 20%, 49%)',
-                      fontSize: '14px',
                       ml: -2,
+                      fontSize: '16px',
+                      fontFamily: 'Jost',
                     }}
                   >
                     Planned
@@ -71,7 +86,16 @@ export function Roadmap({ children }: RoadmapProps) {
             </Grid>
             <Grid item xs={6}>
               <List sx={{ listStyleType: 'disc', ml: 8 }}>
-                <ListItem sx={{ mt: -1.5 }}>1</ListItem>
+                <ListItem
+                  sx={{
+                    mt: -3,
+                    fontWeight: 600,
+                    fontFamily: 'Jost',
+                    color: 'hsl(230.7, 33.3%, 34.1%)',
+                  }}
+                >
+                  1
+                </ListItem>
               </List>
             </Grid>
           </Grid>
@@ -94,8 +118,9 @@ export function Roadmap({ children }: RoadmapProps) {
                   <Typography
                     sx={{
                       color: 'hsl(224, 20%, 49%)',
-                      fontSize: '14px',
                       ml: -2,
+                      fontSize: '16px',
+                      fontFamily: 'Jost',
                     }}
                   >
                     In-Progress
@@ -105,7 +130,16 @@ export function Roadmap({ children }: RoadmapProps) {
             </Grid>
             <Grid item xs={6}>
               <List sx={{ listStyleType: 'disc', ml: 8 }}>
-                <ListItem sx={{ mt: -3 }}>1</ListItem>
+                <ListItem
+                  sx={{
+                    mt: -3.2,
+                    fontWeight: 600,
+                    fontFamily: 'Jost',
+                    color: 'hsl(230.7, 33.3%, 34.1%)',
+                  }}
+                >
+                  1
+                </ListItem>
               </List>
             </Grid>
             <Grid item xs={6}>
@@ -121,8 +155,9 @@ export function Roadmap({ children }: RoadmapProps) {
                   <Typography
                     sx={{
                       color: 'hsl(224, 20%, 49%)',
-                      fontSize: '14px',
                       ml: -2,
+                      fontSize: '16px',
+                      fontFamily: 'Jost',
                     }}
                   >
                     Live
@@ -132,7 +167,16 @@ export function Roadmap({ children }: RoadmapProps) {
             </Grid>
             <Grid item xs={6}>
               <List sx={{ listStyleType: 'disc', ml: 8 }}>
-                <ListItem sx={{ mt: -4 }}>1</ListItem>
+                <ListItem
+                  sx={{
+                    mt: -4.2,
+                    fontWeight: 600,
+                    fontFamily: 'Jost',
+                    color: 'hsl(230.7, 33.3%, 34.1%)',
+                  }}
+                >
+                  1
+                </ListItem>
               </List>
             </Grid>
           </Grid>

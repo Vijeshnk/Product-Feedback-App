@@ -4,19 +4,23 @@ import { Roadmap } from '@product_feedback/scope.cards.roadmap';
 import React from 'react';
 import { Stack } from '@mui/material';
 import ChipGroup from '../components/ChipGroup';
+import TagCardComponent from '../components/TagCardComponent';
 
 type Props = {};
 
 const Home = (props: Props) => {
   return (
     <>
-      <Stack direction="row">
+      <Stack direction="row" sx={{ mb: '10px' }}>
         <Stack direction="column">
           <Feedbackboard />
           <ChipGroup />
           <Roadmap />
         </Stack>
-        <Dropdownnavbar />
+        <Stack direction="column">
+          <Dropdownnavbar />
+          <TagCardComponent />
+        </Stack>
       </Stack>
     </>
   );
