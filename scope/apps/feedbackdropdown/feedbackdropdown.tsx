@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Paper, TextField, Typography } from '@mui/material';
+import { Link, Paper, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ImageList from '@mui/material/ImageList';
@@ -24,9 +24,9 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
   return (
     <div>
-      <div style={{position:'relative',left:320,top:150}}>
+      <Link href="#" underline="none" sx={{position:'relative',left:320,top:150}}>
      <Typography sx={{fontSize:13.5,pt:5,ml:5,fontWeight:'bold',color:'#3A4373'}}><NavigateBeforeIcon sx={{color:'blue',position:'relative',top:8}}/>Go Back</Typography>
-     </div>
+     </Link>
        <ImageList sx={{position:'relative', left:'400px', top:'170px'}}>
       <img  src='https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg'/>
       </ImageList>
