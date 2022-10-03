@@ -8,7 +8,7 @@ type Props = {}
 const RoadmapNav = (props: Props) => {
   return (
     
-    <AppBar   sx={{position:'relative',top:100,height:100,}} >
+    <AppBar   sx={{position:'relative',top:100,height:100,maxWidth:'90%'}} >
       <Toolbar>
     
         <Typography variant="h6" component="div" sx={{ flexGrow: 1,fontWeight:'bold' }}>
