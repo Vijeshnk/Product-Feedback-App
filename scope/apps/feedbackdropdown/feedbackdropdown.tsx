@@ -4,8 +4,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Paper, TextField, Typography } from '@mui/material';
-
-import ImageListItem from '@mui/material/ImageListItem';
+import Button from '@mui/material/Button';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ImageList from '@mui/material/ImageList';
 
 export type FeedbackdropdownProps = {
@@ -24,6 +24,9 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
   return (
     <div>
+      <div style={{position:'relative',left:320,top:150}}>
+     <Typography sx={{fontSize:13.5,pt:5,ml:5,fontWeight:'bold',color:'#3A4373'}}><NavigateBeforeIcon sx={{color:'blue',position:'relative',top:8}}/>Go Back</Typography>
+     </div>
        <ImageList sx={{position:'relative', left:'400px', top:'170px'}}>
       <img  src='https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg'/>
       </ImageList>
@@ -99,7 +102,43 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           placeholder="Max 255 Characters"
 
         />
+        {/* reusing the button  */}
+ <div style={{position: 'relative', left: 60}}>
+ <Button
+    style={{
+        borderRadius: '10px',
+        backgroundColor: 'hsl(282, 83%, 52%)',
+        padding: "15px 35px",
+       
+        left:'310px',
+        fontFamily: 'Jost',
+        fontWeight: 600,
+          fontSize: '15px',
+          textTransform: 'capitalize',
+    }}
+    variant="contained"
+    >
+    add feedback
+</Button>
+<Button
+    style={{
+        borderRadius: '10px',
+        backgroundColor: '#3a4374',
+        padding: "15px 15px",
+       
+        left:'40px',
+        fontFamily: 'Jost',
+        fontWeight: 600,
+          fontSize: '15px',
+          textTransform: 'capitalize',
+    }}
+    variant="contained"
+    >
+    cancel
+</Button>
 
+
+ </div>
     </Paper>
     </div>
   );
