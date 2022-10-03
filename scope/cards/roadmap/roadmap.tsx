@@ -55,7 +55,7 @@ export function Roadmap({ children }: RoadmapProps) {
                     fontWeight: 600,
                   }}
                 >
-                  <a href="#" style={{ color: 'blue' }}>
+                  <a href="/roadmap" style={{ color: 'blue' }}>
                     View
                   </a>
                 </ListItem>

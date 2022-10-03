@@ -6,6 +6,7 @@ import EditFeedback from './pages/EditFeedback';
 import { CssBaseline } from '@mui/material';
 import './assets/css/jost.css';
 import CommentSection from './pages/CommentSection';
+import RoadMap from './pages/RoadMap';
 
 export function ProductFeedbackAppApp() {
   const theme = createTheme({
@@ -34,6 +35,10 @@ export function ProductFeedbackAppApp() {
           </Route>
 
           <Route path="/comments" element={<CommentSection />}>
+            {' '}
+          </Route>
+
+          <Route path="/roadmap" element={<RoadMap />}>
             {' '}
           </Route>
         </Routes>
