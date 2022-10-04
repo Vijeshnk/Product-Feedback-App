@@ -15,7 +15,6 @@ const ChipGroup = (props: Props) => {
           height: 170,
           mt: 3,
           borderRadius: '10px',
-          ml: '12.5rem',
           fontWeight: 600,
           boxShadow: 'none',
         }}

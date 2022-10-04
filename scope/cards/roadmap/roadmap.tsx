@@ -22,7 +22,6 @@ export function Roadmap({ children }: RoadmapProps) {
           height: 170,
           borderRadius: '10px',
           mt: 3,
-          ml: '12.5rem',
           boxShadow: 'none',
         }}
       >

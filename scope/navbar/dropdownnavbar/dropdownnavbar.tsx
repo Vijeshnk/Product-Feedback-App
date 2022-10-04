@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Menu, Typography } from '@mui/material';
+import { Link, Menu, Typography } from '@mui/material';
 import LightbulbCircleOutlined from '@mui/icons-material/LightbulbCircleOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -149,7 +149,9 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 </Menu>
               </FormControl>
               <div style={{ marginLeft: '18rem' }}>
-                <Appbutton>+ Add Feedback</Appbutton>
+                <Link href="/feedback" underline="none">
+                  <Appbutton>+ Add Feedback</Appbutton>
+                </Link>
               </div>
             </Toolbar>
           </AppBar>

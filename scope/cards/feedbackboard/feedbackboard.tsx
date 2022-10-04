@@ -18,7 +18,6 @@ export function Feedbackboard({ children }: FeedbackboardProps) {
         sx={{
           width: 260,
           mt: 12,
-          ml: 25,
           borderRadius: '10px',
           boxShadow: 'none',
         }}
