@@ -47,6 +47,7 @@
         "@mui/material": "5.10.7",
         "@teambit/eslint-config-bit-react": "~0.0.367",
         "@typescript-eslint/eslint-plugin": "4.29.3",
+        "bootstrap": "5.2.2",
         "eslint-import-resolver-node": "0.3.6",
         "eslint-plugin-import": "2.22.1",
         "eslint-plugin-jest": "24.4.0",
@@ -54,6 +55,7 @@
         "eslint-plugin-mdx": "1.15.0",
         "eslint-plugin-react": "7.25.1",
         "material-ui-image": "3.3.2",
+        "react-bootstrap": "2.5.0",
         "react-router-dom": "6.4.1"
       },
       "peerDependencies": {

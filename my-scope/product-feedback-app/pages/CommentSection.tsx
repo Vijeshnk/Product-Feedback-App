@@ -1,8 +1,16 @@
-import { Button, Container, Link, Stack, Typography } from '@mui/material';
-import { Appbutton } from '@product_feedback/scope.buttons.appbutton';
+import {
+  Button,
+  Card,
+  Container,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import TagCardSolution from '../components/TagCardSolution';
+import { useLocation } from 'react-router-dom';
+import CommentCard from '../components/CommentCard';
 
 type Props = {
   tagItem: {
@@ -15,7 +23,8 @@ type Props = {
   };
 };
 
-const CommentSection = ({ tagItem }: Props) => {
+const CommentSection = () => {
+  const location = useLocation();
   return (
     <Container>
       <Link
@@ -43,7 +52,7 @@ const CommentSection = ({ tagItem }: Props) => {
           borderRadius: '10px',
           backgroundColor: 'hsl(230,76%,59%)',
           padding: '8px 28px',
-          left: '65%',
+          left: '73%',
           fontFamily: 'Jost',
           fontWeight: 600,
           fontSize: '15px',
@@ -54,7 +63,19 @@ const CommentSection = ({ tagItem }: Props) => {
       >
         Edit Feedback
       </Button>
-      <TagCardSolution tagItem={tagItem} />
+      <Card
+        sx={{
+          ml: 20,
+          mt: 5,
+          mr: '13%',
+          pb: 1.5,
+          borderRadius: '10px',
+          boxShadow: 'none',
+        }}
+      >
+        <TagCardSolution tagItem={location.state} />
+      </Card>
+      <CommentCard />
     </Container>
   );
 };
