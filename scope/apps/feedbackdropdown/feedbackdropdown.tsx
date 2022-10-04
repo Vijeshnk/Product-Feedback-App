@@ -3,10 +3,11 @@ import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Link, Paper, TextField, Typography } from '@mui/material';
+import { Grid, Link, Paper, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ImageList from '@mui/material/ImageList';
+import { Container, Stack } from 'react-bootstrap';
 
 export type FeedbackdropdownProps = {
   /**
@@ -23,7 +24,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
   };
 
   return (
-    <div>
+    <Container>
       <Link
         href="/"
         underline="none"
@@ -32,14 +33,14 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         <Typography
           sx={{
             fontSize: 13.5,
-            pt: 5,
+           
             ml: 5,
             fontWeight: 'bold',
             color: '#3A4373',
           }}
         >
           <NavigateBeforeIcon
-            sx={{ color: 'blue', position: 'relative', top: 8 }}
+            sx={{ color: 'blue', position: 'relative', top: 7 }}
           />
           Go Back
         </Typography>
@@ -48,7 +49,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         <img src="https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg" />
       </ImageList>
 
-      <Paper sx={{ mt: 18, mx: 45, borderRadius: 3 }}>
+      <Paper sx={{ mt: 18, mx: 45,pb:8, borderRadius: 3 }}>
         <Typography
           sx={{
             fontSize: 22,
@@ -77,7 +78,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           Add a short, descriptive headline
         </Typography>
         <TextField
-          sx={{ ml: 5, mt: 2, width: 480, backgroundColor: '#F7F8FD' }}
+          sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD'}}
           placeholder="Max 50 Characters"
         />
 
@@ -98,8 +99,8 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           Choose a category for your feedback
         </Typography>
         {/* dropdown  */}
-        <Box sx={{ width: 480, ml: 5, mt: 2, pb: 5 }}>
-          <FormControl fullWidth>
+       
+          <FormControl sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD'}}>
             <Select value={age} onChange={handleChange}>
               <MenuItem
                 sx={{
@@ -158,19 +159,19 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
               </MenuItem>
             </Select>
           </FormControl>
-        </Box>
+        
         <Typography
-          sx={{ fontSize: 15, ml: 5, fontWeight: 'bold', color: '#3A4373' }}
+          sx={{ fontSize: 15,fontWeight: 'bold', color: '#3A4373',position:'relative',top:'10px',left:"42px" }}
         >
           Feedback Detail
         </Typography>
         <Typography
           sx={{
             fontSize: 12,
-            ml: 5,
+            
             fontWeight: 'bold',
             color: '#647196',
-            pb: 3,
+            position:'relative',top:'10px',left:"42px"
           }}
         >
           Include any specific comments on what should be improved, added, etc.
@@ -178,36 +179,23 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
         {/* Feedback details */}
         <TextField
-          sx={{ ml: 5, width: 480, backgroundColor: '#F7F8FD', mb: 5 }}
+          sx={{ position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD' }}
           multiline
           rows={4}
           placeholder="Max 255 Characters"
         />
         {/* reusing the button  */}
-        <div style={{ position: 'relative', left: 60 }}>
-          <Button
-            style={{
-              borderRadius: '10px',
-              backgroundColor: 'hsl(282, 83%, 52%)',
-              padding: '15px 35px',
-
-              left: '310px',
-              fontFamily: 'Jost',
-              fontWeight: 600,
-              fontSize: '15px',
-              textTransform: 'capitalize',
-            }}
-            variant="contained"
-          >
-            add feedback
-          </Button>
+        <Grid sx={{position:'relative',top:'35px',display:'flex',justifyContent:'flex-end'}}>
+          
+       
+          
           <Button
             style={{
               borderRadius: '10px',
               backgroundColor: '#3a4374',
               padding: '15px 15px',
-
-              left: '40px',
+              position:'relative',
+              right:'25px',
               fontFamily: 'Jost',
               fontWeight: 600,
               fontSize: '15px',
@@ -217,8 +205,25 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           >
             cancel
           </Button>
-        </div>
+          <Button
+            style={{
+              borderRadius: '10px',
+              backgroundColor: 'hsl(282, 83%, 52%)',
+              padding: '15px 35px',
+              position:'relative',
+              right:'18px',
+              fontFamily: 'Jost',
+              fontWeight: 600,
+              fontSize: '15px',
+              textTransform: 'capitalize',
+            }}
+            variant="contained"
+          >
+            add feedback
+          </Button>
+          
+        </Grid>
       </Paper>
-    </div>
+    </Container>
   );
 }
