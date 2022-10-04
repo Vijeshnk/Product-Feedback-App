@@ -31,9 +31,23 @@ const RoadmapNav = (props: Props) => {
 
         <Grid direction='row' spacing={2}>
           {/* add feedback button  */}
-          <div style={{ marginLeft: '18rem',height:20 }}>
-                <Appbutton>+ Add Feedback</Appbutton>
-              </div>
+          <Button href='/feedback'
+            style={{
+              borderRadius: '10px',
+              backgroundColor: 'hsl(282, 83%, 52%)',
+              padding: '15px 35px',
+              position:'relative',
+              top:'30px',
+              fontFamily: 'Jost',
+              fontWeight: 600,
+              fontSize: '15px',
+              
+            }}
+            variant="contained"
+          >
+            + Add Feedback
+          </Button>
+              
         </Grid>
         </Grid>
       </Toolbar>
