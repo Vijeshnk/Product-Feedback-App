@@ -7,7 +7,7 @@ type Props = {}
 
 const RoadmapNav = (props: Props) => {
   return (
-    
+    <Box sx={{display:'flex',justifyContent:'center'}}>
     <AppBar   sx={{position:'relative',top:100,height:100,maxWidth:'90%'}} >
       <Toolbar>
     
@@ -19,6 +19,7 @@ const RoadmapNav = (props: Props) => {
         </Stack>
       </Toolbar>
     </AppBar>
+    </Box>
 
   )
 }
