@@ -3,7 +3,7 @@ import React from 'react';
 import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
 import { Commenticon } from '@myorg/product_feedback.scope.icons.commenticon';
-import { Link } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import { CardActionArea } from '@mui/material';
 import CommentSection from '../pages/CommentSection';
 import TagCardSolution from './TagCardSolution';
@@ -19,11 +19,13 @@ type Props = {
   };
 };
 
-const handleNavigation = ({ tagItem }: Props) => {
-  return <CommentSection tagItem={tagItem} />;
-};
-
 const TagSolution = ({ tagItem }: Props) => {
+  const navigate = useNavigate();
+  const handleNavigation = ({ tagItem }: Props) => {
+    navigate('/comments', {
+      state: tagItem,
+    });
+  };
   return (
     <Card
       key={tagItem.id}

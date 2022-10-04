@@ -15,6 +15,12 @@
         "mainFile": "index.ts",
         "rootDir": "scope/apps/feedbackdropdown"
     },
+    "avatar/userinfo": {
+        "scope": "product_feedback.scope",
+        "version": "0.0.2",
+        "mainFile": "index.ts",
+        "rootDir": "scope/avatar/userinfo"
+    },
     "buttons/appbutton": {
         "scope": "product_feedback.scope",
         "version": "0.0.2",

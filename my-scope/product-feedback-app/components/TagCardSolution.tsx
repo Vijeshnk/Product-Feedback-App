@@ -1,4 +1,4 @@
-import { Card, Typography, Stack } from '@mui/material';
+import { Typography, Stack } from '@mui/material';
 import React from 'react';
 import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
