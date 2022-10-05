@@ -24,17 +24,17 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
   };
 
   return (
-    <Container>
+    <Grid container>
       <Link
         href="/"
         underline="none"
-        sx={{ position: 'relative', left: 320, top: 150 }}
+        sx={{ position: 'relative', left: 320, top: 120 }}
       >
         <Typography
           sx={{
             fontSize: 13.5,
            
-            ml: 5,
+           
             fontWeight: 'bold',
             color: '#3A4373',
           }}
@@ -45,11 +45,15 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           Go Back
         </Typography>
       </Link>
-      <ImageList sx={{ position: 'relative', left: '400px', top: '170px' }}>
+      <ImageList sx={{ position: 'relative', left: '300px', top: '185px' }}>
         <img src="https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg" />
       </ImageList>
-
-      <Paper sx={{ mt: 18, mx: 45,pb:8, borderRadius: 3 }}>
+          <Grid  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justifyContent="center" sx={{marginBottom:10}} >
+      <Paper sx={{ mt: 18,pb:8, borderRadius: 3,minWidth:'50%' }}>
         <Typography
           sx={{
             fontSize: 22,
@@ -100,7 +104,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         </Typography>
         {/* dropdown  */}
        
-          <FormControl sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD'}}>
+          <FormControl sx={{position:'relative',top:'10px',left:"42px",width:"85%",backgroundColor: '#F7F8FD'}}>
             <Select value={age} onChange={handleChange}>
               <MenuItem
                 sx={{
@@ -195,7 +199,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
               backgroundColor: '#3a4374',
               padding: '15px 15px',
               position:'relative',
-              right:'25px',
+              right:'60px',
               fontFamily: 'Jost',
               fontWeight: 600,
               fontSize: '15px',
@@ -211,7 +215,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
               backgroundColor: 'hsl(282, 83%, 52%)',
               padding: '15px 35px',
               position:'relative',
-              right:'18px',
+              right:'50px',
               fontFamily: 'Jost',
               fontWeight: 600,
               fontSize: '15px',
@@ -224,6 +228,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           
         </Grid>
       </Paper>
-    </Container>
+      </Grid>
+    </Grid>
   );
 }
