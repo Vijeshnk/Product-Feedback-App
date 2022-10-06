@@ -1,17 +1,35 @@
 import { Card, Typography } from '@mui/material';
-import { Userinfo } from '@product_feedback/scope.avatar.userinfo';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import UserComments from './UserComments';
 
-type Props = {};
+type Props = {
+  tagItem: {
+    id: number;
+    heading: string;
+    tagline: string;
+    chipName: string;
+    voteCount: number;
+    commentCount: number;
+    comments: {
+      comment_id: number;
+      name: string;
+      username: string;
+      comment: string;
+      imgsrc: any;
+    }[];
+  };
+};
 
-const CommentCard = (props: Props) => {
+const CommentCard = ({ tagItem }: Props) => {
   return (
     <Card
       sx={{
         ml: 20,
         mt: 3,
         mr: '13%',
-        pb: 1.5,
+        pb: 3,
+        mb: 10,
         borderRadius: '10px',
         boxShadow: 'none',
       }}
@@ -27,13 +45,7 @@ const CommentCard = (props: Props) => {
       >
         4 &nbsp; Comments
       </Typography>
-      <div style={{ marginLeft: '3.5%' }}>
-        <Userinfo
-          src={require('../assets/images/image-anne.jpg')}
-          name="Anne Maria"
-          username="@anne_m"
-        />
-      </div>
+      <UserComments tagItem={tagItem} />
     </Card>
   );
 };

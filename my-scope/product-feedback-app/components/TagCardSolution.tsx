@@ -28,6 +28,7 @@ const TagCardSolution = ({ tagItem }: Props) => {
             fontSize: '1.2rem',
             fontWeight: 650,
             color: 'primary.main',
+            fontFamily: 'Jost',
           }}
         >
           {tagItem.heading}
@@ -39,6 +40,7 @@ const TagCardSolution = ({ tagItem }: Props) => {
             fontSize: '1rem',
             color: 'primary.main',
             fontWeight: 500,
+            fontFamily: 'Jost',
           }}
         >
           {tagItem.tagline}
