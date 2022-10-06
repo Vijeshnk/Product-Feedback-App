@@ -35,7 +35,11 @@ export function Userinfo({ name, username, src }: UserinfoProps) {
         </Typography>
         <Typography
           variant="subtitle1"
-          sx={{ fontSize: '14px', color: 'hsl(224, 20%, 49%)' }}
+          sx={{
+            fontSize: '0.95rem',
+            color: 'hsl(224, 20%, 49%)',
+            fontFamily: 'Jost',
+          }}
         >
           {username}
         </Typography>

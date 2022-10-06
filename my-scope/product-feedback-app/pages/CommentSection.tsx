@@ -75,7 +75,7 @@ const CommentSection = () => {
       >
         <TagCardSolution tagItem={location.state} />
       </Card>
-      <CommentCard />
+      <CommentCard tagItem={location.state} />
     </Container>
   );
 };
