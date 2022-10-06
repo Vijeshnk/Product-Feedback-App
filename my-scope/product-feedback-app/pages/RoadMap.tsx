@@ -6,6 +6,9 @@ import RoadmapNav from '../components/RoadmapNav'
 import {Styledchip} from '@product_feedback/scope.chips.styledchip'
 import {Votebutton} from '@myorg/product_feedback.scope.buttons.votebutton'
 import {Commenticon} from '@myorg/product_feedback.scope.icons.commenticon'
+import RoadmapVoteButton from '../components/RoadmapVoteButton'
+import ToggleButton from '../components/ToggleButton'
+
 type Props = {}
 
 const RoadMap = (props: Props) => {
@@ -82,7 +85,7 @@ const RoadMap = (props: Props) => {
           borderRadius: 1,
         }}
       >
-        <Box><Votebutton>83</Votebutton></Box>
+        <Box> <ToggleButton/></Box>
         <Box><Commenticon>0</Commenticon></Box>
         
       </Box>
@@ -137,7 +140,7 @@ const RoadMap = (props: Props) => {
           borderRadius: 1,
         }}
       >
-        <Box><Votebutton >23</Votebutton></Box>
+        <Box> <ToggleButton/></Box>
         <Box><Commenticon>1</Commenticon></Box>
         
       </Box>
@@ -190,7 +193,7 @@ const RoadMap = (props: Props) => {
           borderRadius: 1,
         }}
       >
-        <Box><Votebutton>75</Votebutton></Box>
+        <Box> <ToggleButton/></Box>
         <Box><Commenticon>1</Commenticon></Box>
         
       </Box>
@@ -201,6 +204,7 @@ const RoadMap = (props: Props) => {
     </Grid>
   
     </Grid>
+   
     </>
   )
 }
