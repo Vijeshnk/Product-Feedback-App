@@ -21,7 +21,7 @@ export default function ToggleButton() {
     return (
         
         
-    <Button style={{height:'2.3rem'}}
+    <Button style={{height:'2.3rem',border:'none',borderRadius: '10px'}}
     onClick={toggle} id="clicks" >
 
          {state ? <span>☆</span> : <span>🌟 </span>}
