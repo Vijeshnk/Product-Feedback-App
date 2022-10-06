@@ -28,8 +28,7 @@ const CommentCard = ({ tagItem }: Props) => {
         ml: 20,
         mt: 3,
         mr: '13%',
-        pb: 3,
-        mb: 10,
+        pb: 8,
         borderRadius: '10px',
         boxShadow: 'none',
       }}

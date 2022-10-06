@@ -11,6 +11,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import TagCardSolution from '../components/TagCardSolution';
 import { useLocation } from 'react-router-dom';
 import CommentCard from '../components/CommentCard';
+import AddCommentBox from '../components/AddCommentBox';
 
 type Props = {
   tagItem: {
@@ -76,6 +77,7 @@ const CommentSection = () => {
         <TagCardSolution tagItem={location.state} />
       </Card>
       <CommentCard tagItem={location.state} />
+      <AddCommentBox />
     </Container>
   );
 };

@@ -37,6 +37,7 @@ export function Userinfo({ name, username, src }: UserinfoProps) {
           variant="subtitle1"
           sx={{
             fontSize: '0.95rem',
+            fontWeight: 500,
             color: 'hsl(224, 20%, 49%)',
             fontFamily: 'Jost',
           }}
