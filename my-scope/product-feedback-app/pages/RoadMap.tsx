@@ -40,7 +40,7 @@ const RoadMap = (props: Props) => {
     <Grid container spacing={3} sx={{paddingX:'100px', justifyContent:'center',marginTop:'3px'}}>
       <Grid item  >
       <Box width='300px'>
-      <Card sx={{borderTop:'solid',borderTopColor:'orange'}}>
+      <Card sx={{borderTop:'solid',borderTopColor:'orange',borderTopWidth:'6px'}}>
         <CardContent>
         <List sx={{ listStyleType: 'disc', ml: 1, mt: -4.5 }}>
                 <ListItem
@@ -95,7 +95,7 @@ const RoadMap = (props: Props) => {
     </Grid>
     <Grid item >
     <Box width='300px'>
-    <Card sx={{borderTop:'solid',borderTopColor:'purple'}}>
+    <Card sx={{borderTop:'solid',borderTopColor:'purple',borderTopWidth:'6px',borderRadius:2}}>
         <CardContent>
         <List sx={{ listStyleType: 'disc', ml: 1, mt: -4.5 }}>
                 <ListItem
@@ -137,7 +137,7 @@ const RoadMap = (props: Props) => {
           borderRadius: 1,
         }}
       >
-        <Box><Votebutton>23</Votebutton></Box>
+        <Box><Votebutton >23</Votebutton></Box>
         <Box><Commenticon>1</Commenticon></Box>
         
       </Box>
@@ -148,7 +148,7 @@ const RoadMap = (props: Props) => {
     </Grid>
     <Grid item >
     <Box width='300px'>
-    <Card sx={{borderTop:'solid',borderTopColor:'skyblue'}}>
+    <Card  sx={{borderTop:'solid',borderTopColor:'skyblue',borderTopWidth:'6px',borderRadius:2}}>
         <CardContent>
         <List sx={{ listStyleType: 'disc', ml: 1, mt: -4.5 }}>
                 <ListItem
