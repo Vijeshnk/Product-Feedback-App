@@ -16,7 +16,6 @@ export type AppbuttonProps = {
     | 'info'
     | 'warning'
     | undefined;
-  sx?: SxProps<Theme> | undefined;
   variant?: 'text' | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -39,6 +38,8 @@ export function Appbutton({ children, ...rest }: AppbuttonProps) {
           fontWeight: 600,
           fontSize: '15px',
           textTransform: 'capitalize',
+          py: 1,
+          px: 2.5,
         }}
       >
         {children}
