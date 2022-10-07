@@ -6,7 +6,7 @@ import RoadmapNav from '../components/RoadmapNav'
 import {Styledchip} from '@product_feedback/scope.chips.styledchip'
 import {Votebutton} from '@myorg/product_feedback.scope.buttons.votebutton'
 import {Commenticon} from '@myorg/product_feedback.scope.icons.commenticon'
-import RoadmapVoteButton from '../components/RoadmapVoteButton'
+
 import ToggleButton from '../components/ToggleButton'
 
 type Props = {}
@@ -74,7 +74,9 @@ const RoadMap = (props: Props) => {
 
               </List>
               {/* imported component */}
-              <Styledchip>Feature</Styledchip>
+              <div style={{position:'relative',left:'12px',fontWeight: 'bold',pointerEvents:'none'}}>
+              <Styledchip >Feature</Styledchip>
+              </div>
               <Box
         sx={{
           display: 'flex',
@@ -129,7 +131,9 @@ const RoadMap = (props: Props) => {
 
               </List>
               {/* imported component */}
+              <div style={{position:'relative',left:'12px',fontWeight: 'bold',pointerEvents:'none'}}>
               <Styledchip>Bug</Styledchip>
+              </div>
               <Box
         sx={{
           display: 'flex',
@@ -182,7 +186,10 @@ const RoadMap = (props: Props) => {
 
               </List>
               {/* imported component */}
+              <div style={{position:'relative',left:'12px',fontWeight: 'bold',pointerEvents:'none'}}>
+
               <Styledchip>Bug</Styledchip>
+              </div>
               <Box
         sx={{
           display: 'flex',

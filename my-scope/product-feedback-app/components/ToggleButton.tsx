@@ -42,6 +42,7 @@ const ToggleButton: React.FC<Props>=({num}:Props) => {
     borderRadius: '10px',
     width: '5rem',
     fontWeight:'bold',
+    cursor: 'pointer',
     fontFamily: 'Jost',
     border:'none'}}
     onClick={()=>{toggle();handleClick()}} id="clicks">
