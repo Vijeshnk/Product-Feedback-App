@@ -52,8 +52,8 @@ const UserComments = ({ tagItem }: Props) => {
     <Container>
       <Typography
         sx={{
-          ml: 4,
-          my: 2,
+          ml: 1,
+          my: 3,
           fontSize: '1.2rem',
           fontWeight: 550,
           color: 'primary.main',
@@ -64,90 +64,105 @@ const UserComments = ({ tagItem }: Props) => {
       {tagItem.comments.map((comment) => {
         return (
           <>
-            <div style={{ marginLeft: '3.5%', marginTop: '2%' }}>
-              <Stack direction="column">
-                <Stack direction="column">
-                  <Userinfo
-                    src={comment.imgsrc}
-                    name={comment.name}
-                    username={comment.username}
-                  />
-                  <Typography
+            <Container>
+              <div style={{ marginTop: '2%', marginLeft: '-1.5%' }}>
+                <Stack direction="row">
+                  <Stack direction="column">
+                    <Userinfo
+                      src={comment.imgsrc}
+                      name={comment.name}
+                      username={comment.username}
+                    />
+                    <Typography
+                      sx={{
+                        ml: 8.5,
+                        fontSize: '0.95rem',
+                        color: 'primary.main',
+                        fontFamily: 'Jost',
+                      }}
+                    >
+                      {comment.comment}
+                    </Typography>
+                  </Stack>
+                  <Button
                     sx={{
-                      ml: 8.5,
-                      fontSize: '0.95rem',
-                      color: 'primary.main',
+                      color: 'hsl(230, 76%, 59%)',
+                      position: 'absolute',
+                      right: '25%',
+                      mt: '4',
+                      fontWeight: 550,
                       fontFamily: 'Jost',
+                      textTransform: 'capitalize',
                     }}
+                    onClick={handleReply}
                   >
-                    {comment.comment}
-                  </Typography>
-                  {reply ? <PostReply /> : null}
+                    {reply ? 'Cancel' : 'Reply'}
+                  </Button>
                 </Stack>
-                <Button
-                  sx={{
-                    color: 'hsl(230, 76%, 59%)',
-                    position: 'absolute',
-                    right: '25%',
-                    mt: '4',
-                    fontWeight: 550,
-                    fontFamily: 'Jost',
-                    textTransform: 'capitalize',
-                  }}
-                  onClick={handleReply}
-                >
-                  {reply ? 'Cancel' : 'Reply'}
-                </Button>
-              </Stack>
-            </div>
+                {reply ? (
+                  <span>
+                    <PostReply />
+                  </span>
+                ) : null}
+              </div>
 
-            {comment.replies
-              ? comment.replies.map((replyingUser) => {
-                  return (
-                    <div style={{ marginLeft: '2.5%' }}>
-                      <Stack direction="row">
-                        <Divider
-                          orientation="vertical"
-                          flexItem
-                          sx={{ mr: 3 }}
-                        />
-                        <div style={{ marginTop: 20 }}>
-                          <Stack direction="column">
-                            <Userinfo
-                              src={replyingUser.imgsrc}
-                              name={replyingUser.name}
-                              username={replyingUser.username}
-                            />
-                            <Typography
+              {comment.replies
+                ? comment.replies.map((replyingUser) => {
+                    return (
+                      <div style={{ marginLeft: '1%' }}>
+                        <Stack direction="row">
+                          <Divider
+                            orientation="vertical"
+                            flexItem
+                            sx={{ mr: 3 }}
+                          />
+                          <div style={{ marginTop: 20 }}>
+                            <Stack direction="column">
+                              <Userinfo
+                                src={replyingUser.imgsrc}
+                                name={replyingUser.name}
+                                username={replyingUser.username}
+                              />
+                              <Typography
+                                sx={{
+                                  ml: 8.5,
+                                  fontSize: '0.95rem',
+                                  color: 'primary.main',
+                                  fontFamily: 'Jost',
+                                }}
+                              >
+                                {replyingUser.comment}
+                              </Typography>
+                            </Stack>
+                            <Button
                               sx={{
-                                ml: 8.5,
-                                fontSize: '0.95rem',
-                                color: 'primary.main',
+                                color: 'hsl(230, 76%, 59%)',
+                                position: 'absolute',
+                                right: '25%',
+                                mt: -10,
+                                fontWeight: 550,
                                 fontFamily: 'Jost',
+                                textTransform: 'capitalize',
                               }}
                             >
-                              {replyingUser.comment}
-                            </Typography>
-                          </Stack>
-                          <Button
-                            sx={{
-                              color: 'hsl(230, 76%, 59%)',
-                              position: 'absolute',
-                              right: '25%',
-                              mt: -10,
-                              fontWeight: 550,
-                              fontFamily: 'Jost',
-                              textTransform: 'capitalize',
-                            }}
-                          >
-                            Reply
-                          </Button>
-                        </div>
-                      </Stack>
-                    </div>
-                  );
-                })
-              : null}
+                              Reply
+                            </Button>
+                          </div>
+                        </Stack>
+                      </div>
+                    );
+                  })
+                : null}
+              {/* </div> */}
+            </Container>
+            <div
+              style={{
+                backgroundColor: '#f2f2f2',
+                margin: '32px 0px',
+                height: '1px',
+                width: '100%',
+              }}
+            ></div>
           </>
         );
       })}

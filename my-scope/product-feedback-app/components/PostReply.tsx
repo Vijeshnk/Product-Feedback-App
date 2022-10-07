@@ -7,12 +7,12 @@ type Props = {};
 
 const PostReply = (props: Props) => {
   return (
-    <Container>
-      <Stack direction="row" sx={{ marginLeft: '8%' }}>
-        <Comment placeholder="Ctrl + Enter" />
+    <Stack direction="row" sx={{ marginLeft: '8%', marginTop: '3%' }}>
+      <Comment placeholder="Ctrl + Enter" />
+      <span style={{ marginLeft: '5%' }}>
         <Appbutton>Post Reply</Appbutton>
-      </Stack>
-    </Container>
+      </span>
+    </Stack>
   );
 };
 
