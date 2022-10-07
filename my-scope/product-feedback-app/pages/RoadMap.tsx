@@ -1,10 +1,7 @@
 import { Box, Card, CardContent, Grid, Link, List, ListItem, Typography } from '@mui/material'
 import React from 'react'
-
 import RoadmapNav from '../components/RoadmapNav'
-
 import {Styledchip} from '@product_feedback/scope.chips.styledchip'
-import {Votebutton} from '@myorg/product_feedback.scope.buttons.votebutton'
 import {Commenticon} from '@myorg/product_feedback.scope.icons.commenticon'
 
 import ToggleButton from '../components/ToggleButton'
@@ -218,6 +215,3 @@ const RoadMap = (props: Props) => {
 
 export default RoadMap
 
-function makeStyles(arg0: { gridContainer: { paddingLeft: string; paddingRight: string } }): any {
-  throw new Error('Function not implemented.')
-}

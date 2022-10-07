@@ -81,8 +81,10 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         >
           Add a short, descriptive headline
         </Typography>
-        <TextField
-          sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD'}}
+        <TextField   inputProps={{
+    maxLength: 50
+  }}
+          sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD',}}
           placeholder="Max 50 Characters"
         />
 
@@ -183,6 +185,9 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
         {/* Feedback details */}
         <TextField
+          inputProps={{
+            maxLength: 255
+          }}
           sx={{ position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD',marginTop:'10px' }}
           multiline
           rows={4}

@@ -11,7 +11,8 @@ const ToggleButton: React.FC<Props>=({num}:Props) => {
 
     const [state, setState] = useState(true);
     const [counter, setCounter] = useState(num);
-    
+    const [isActive, setIsActive] = useState(false);
+
     function toggle() {
     
     setState(!state);
@@ -24,8 +25,7 @@ const ToggleButton: React.FC<Props>=({num}:Props) => {
     }
     }
 
-    const [isActive, setIsActive] = useState(false);
-
+    
     const handleClick = () => {
       // 👇️ toggle
       setIsActive(current => !current);
