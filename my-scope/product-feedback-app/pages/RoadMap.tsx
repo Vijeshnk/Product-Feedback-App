@@ -88,7 +88,7 @@ const RoadMap = (props: Props) => {
         }}
       >
         <Box> <ToggleButton num={82}/></Box>
-        <Box><Commenticon>0</Commenticon></Box>
+        <Box><Link href='#' underline="none"><Commenticon>0</Commenticon></Link></Box>
         
       </Box>
 
@@ -145,7 +145,7 @@ const RoadMap = (props: Props) => {
         }}
       >
         <Box> <ToggleButton num={23}/></Box>
-        <Box><Commenticon>1</Commenticon></Box>
+        <Box><Link href='#' underline="none"><Commenticon>1</Commenticon></Link></Box>
         
       </Box>
 
@@ -201,7 +201,7 @@ const RoadMap = (props: Props) => {
         }}
       >
         <Box> <ToggleButton num={75}  /></Box>
-        <Box><Commenticon>1</Commenticon></Box>
+        <Box><Link href='#' underline="none"><Commenticon>1</Commenticon></Link></Box>
         
       </Box>
 
