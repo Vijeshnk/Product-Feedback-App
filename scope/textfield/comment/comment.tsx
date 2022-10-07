@@ -5,16 +5,17 @@ export type CommentProps = {
   /**
    * a node to be rendered in the special component.
    */
+  placeholder: string;
   children?: ReactNode;
 };
 
-export function Comment({ children }: CommentProps) {
+export function Comment({ children, placeholder }: CommentProps) {
   return (
     <div>
       <Box component="form" noValidate autoComplete="off">
         <FormControl fullWidth>
           <OutlinedInput
-            placeholder=""
+            placeholder={placeholder}
             sx={{
               height: '10ch',
               borderRadius: '6px',

@@ -12,6 +12,7 @@ import TagCardSolution from '../components/TagCardSolution';
 import { useLocation } from 'react-router-dom';
 import CommentCard from '../components/CommentCard';
 import AddCommentBox from '../components/AddCommentBox';
+import PostReply from '../components/PostReply';
 
 type Props = {
   tagItem: {
@@ -21,6 +22,25 @@ type Props = {
     chipName: string;
     voteCount: number;
     commentCount: number;
+    comment_id: number;
+    name: string;
+    username: string;
+    comment: string;
+    imgsrc: any;
+    comments: {
+      comment_id: number;
+      name: string;
+      username: string;
+      comment: string;
+      imgsrc: any;
+      replies: {
+        reply_id: number;
+        name: string;
+        username: string;
+        comment: string;
+        imgsrc: any;
+      };
+    };
   };
 };
 

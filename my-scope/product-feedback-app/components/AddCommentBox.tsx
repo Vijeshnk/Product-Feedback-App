@@ -32,7 +32,7 @@ const AddCommentBox = (props: Props) => {
           Add Comment
         </Typography>
         <div style={{ marginLeft: '4%', marginRight: '4%' }}>
-          <Comment />
+          <Comment placeholder="" />
           <Stack direction="row" sx={{ mt: 3, pb: 5 }}>
             <Typography
               variant="subtitle1"

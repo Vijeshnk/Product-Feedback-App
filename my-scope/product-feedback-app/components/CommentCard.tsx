@@ -12,12 +12,21 @@ type Props = {
     voteCount: number;
     commentCount: number;
     comments: {
+      map(arg0: (comment: any) => JSX.Element): React.ReactNode;
       comment_id: number;
       name: string;
       username: string;
       comment: string;
       imgsrc: any;
-    }[];
+      replies: {
+        map(arg0: (replyingUser: any) => void): JSX.Element;
+        reply_id: number;
+        name: string;
+        username: string;
+        comment: string;
+        imgsrc: any;
+      };
+    };
   };
 };
 
@@ -33,17 +42,6 @@ const CommentCard = ({ tagItem }: Props) => {
         boxShadow: 'none',
       }}
     >
-      <Typography
-        sx={{
-          ml: 4,
-          my: 2,
-          fontSize: '1.2rem',
-          fontWeight: 550,
-          color: 'primary.main',
-        }}
-      >
-        4 &nbsp; Comments
-      </Typography>
       <UserComments tagItem={tagItem} />
     </Card>
   );
