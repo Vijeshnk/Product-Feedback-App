@@ -165,7 +165,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           </FormControl>
         
         <Typography
-          sx={{ fontSize: 15,fontWeight: 'bold', color: '#3A4373',position:'relative',top:'10px',left:"42px" }}
+          sx={{ fontSize: 15,fontWeight: 'bold', color: '#3A4373',position:'relative',top:'10px',left:"42px",marginTop:'10px' }}
         >
           Feedback Detail
         </Typography>
@@ -183,7 +183,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
         {/* Feedback details */}
         <TextField
-          sx={{ position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD' }}
+          sx={{ position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD',marginTop:'10px' }}
           multiline
           rows={4}
           placeholder="Max 255 Characters"
