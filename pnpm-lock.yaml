@@ -31,6 +31,7 @@ importers:
       eslint-plugin-jsx-a11y: 6.4.1
       eslint-plugin-mdx: 1.15.0
       eslint-plugin-react: 7.25.1
+      hamburger-react: 2.5.0
       material-ui-image: 3.3.2
       react: 17.0.2
       react-bootstrap: 2.5.0
@@ -57,6 +58,7 @@ importers:
       eslint-plugin-jsx-a11y: registry.npmjs.org/eslint-plugin-jsx-a11y/6.4.1
       eslint-plugin-mdx: registry.npmjs.org/eslint-plugin-mdx/1.15.0
       eslint-plugin-react: registry.npmjs.org/eslint-plugin-react/7.25.1
+      hamburger-react: registry.npmjs.org/hamburger-react/2.5.0_react@17.0.2
       material-ui-image: registry.npmjs.org/material-ui-image/3.3.2_ojejst3ckgeldqr723e2zdseoa
       react: registry.npmjs.org/react/17.0.2
       react-bootstrap: registry.npmjs.org/react-bootstrap/2.5.0_hiunvzosbwliizyirxfy6hjyim
@@ -97,6 +99,9 @@ importers:
     specifiers: {}
 
   scope/navbar/dropdownnavbar:
+    specifiers: {}
+
+  scope/textfield/comment:
     specifiers: {}
 
 packages:
@@ -2777,6 +2782,20 @@ packages:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==, registry: https://node.bit.cloud/, tarball: https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz}
     name: graceful-fs
     version: 4.2.10
+    dev: false
+
+  registry.npmjs.org/hamburger-react/2.5.0_react@17.0.2:
+    resolution: {integrity: sha512-5GSXe+ucxTPJ0SkhIsPQ/PRDweZPIKya1lfahAuExx31SdheeUA4uOPfQIAirbKona8hvo79VDr5LJQzPXsdpw==, registry: https://node.bit.cloud/, tarball: https://registry.npmjs.org/hamburger-react/-/hamburger-react-2.5.0.tgz}
+    id: registry.npmjs.org/hamburger-react/2.5.0
+    name: hamburger-react
+    version: 2.5.0
+    peerDependencies:
+      react: '*'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: registry.npmjs.org/react/17.0.2
     dev: false
 
   registry.npmjs.org/has-bigints/1.0.2:

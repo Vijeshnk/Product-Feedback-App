@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
 import { Commenticon } from '@myorg/product_feedback.scope.icons.commenticon';
+import ToggleButton from './ToggleButton';
 type Props = {
   tagItem: {
     id: number;
@@ -35,14 +36,14 @@ const TagCardSolution = ({ tagItem }: Props) => {
   return (
     <Stack direction="row">
       <Stack sx={{ marginTop: 3, marginLeft: 3 }}>
-        <div
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            handleCount();
-          }}
-        >
-          {!matches && (
+        {!matches && (
+          <div
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              handleCount();
+            }}
+          >
             <Votebutton
               isActive
               onClick={handleCount}
@@ -50,8 +51,8 @@ const TagCardSolution = ({ tagItem }: Props) => {
             >
               {count}
             </Votebutton>
-          )}
-        </div>
+          </div>
+        )}
       </Stack>
       <Stack direction="column">
         <Typography
@@ -98,6 +99,17 @@ const TagCardSolution = ({ tagItem }: Props) => {
         >
           <Styledchip>{tagItem.chipName}</Styledchip>
         </div>
+        {matches && (
+          <div
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+            }}
+            style={{ marginTop: 30, marginLeft: 12 }}
+          >
+            <ToggleButton num={count} />
+          </div>
+        )}
       </Stack>
       {!matches && (
         <div
@@ -114,7 +126,7 @@ const TagCardSolution = ({ tagItem }: Props) => {
         <div
           style={{
             color: '#000',
-            marginTop: '25%',
+            marginTop: '38%',
             marginRight: '3rem',
           }}
         >
