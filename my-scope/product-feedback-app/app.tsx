@@ -22,7 +22,7 @@ export function ProductFeedbackAppApp() {
     },
     palette: {
       background: {
-        default: '#f2f2f2',
+        default: 'hsl(231, 100%, 97%)',
       },
 
       primary: {

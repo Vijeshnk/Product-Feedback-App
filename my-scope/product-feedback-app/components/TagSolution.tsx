@@ -37,28 +37,17 @@ const TagSolution = ({ tagItem }: Props) => {
     <Card
       key={tagItem.id}
       sx={{
-        ml: {
-          xs: 2,
-          sm: 2,
-          md: 1,
-          lg: 1,
-        },
+        ml: 1,
         mt: 3,
         pb: {
-          xs: 3,
+          xs: 5,
           sm: 3,
           md: 1.5,
           lg: 1.5,
         },
-        mr: {
-          xs: '20%',
-          sm: '20%',
-          md: 0,
-          lg: 0,
-        },
         width: {
-          xs: '70%',
-          sm: '70%',
+          xs: '100%',
+          sm: '100%',
           md: '102%',
           lg: '102%',
         },

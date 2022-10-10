@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link, Menu, Typography } from '@mui/material';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+import { Link, Menu, Typography, useMediaQuery } from '@mui/material';
 import LightbulbCircleOutlined from '@mui/icons-material/LightbulbCircleOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -33,6 +33,10 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
+  const theme = useTheme();
+  const SmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   const handleChange = (event) => {
     setcommentValue(event.target.id);
   };
@@ -59,20 +63,42 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Box sx={{ mt: 12, ml: 4, flexGrow: 1 }}>
+        <Box
+          sx={{
+            mt: { xs: 19, sm: 12, md: 12, lg: 12 },
+            ml: 4,
+            flexGrow: 1,
+          }}
+        >
           <AppBar
-            position="static"
-            sx={{ borderRadius: '10px', boxShadow: 'none' }}
+            sx={{
+              position: {
+                xs: 'absolute',
+                sm: 'static',
+                md: 'static',
+                lg: 'static',
+              },
+              top: { xs: 85, sm: 0, md: 0, lg: 0 },
+              borderRadius: { xs: 'none', sm: '10px', md: '10px', lg: '10px' },
+              boxShadow: 'none',
+            }}
           >
             <Toolbar>
-              <LightbulbCircleOutlined />
+              {!matches && <LightbulbCircleOutlined />}
 
-              <Typography sx={{ ml: 2, fontWeight: 700, fontFamily: 'Jost' }}>
-                4 Suggetions
-              </Typography>
+              {!matches && (
+                <Typography sx={{ ml: 2, fontWeight: 700, fontFamily: 'Jost' }}>
+                  4 Suggetions
+                </Typography>
+              )}
               <Typography
                 sx={{
-                  ml: 2,
+                  ml: {
+                    xs: 1,
+                    sm: 1,
+                    md: 2,
+                    lg: 2,
+                  },
                   fontFamily: 'Jost',
                   fontWeight: 500,
                   fontSize: 14,
@@ -148,11 +174,20 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                   </MenuItem>
                 </Menu>
               </FormControl>
-              <div style={{ marginLeft: '18rem' }}>
-                <Link href="/feedback" underline="none">
-                  <Appbutton>+ Add Feedback</Appbutton>
-                </Link>
-              </div>
+              {!matches && (
+                <div style={{ marginLeft: '18rem' }}>
+                  <Link href="/feedback" underline="none">
+                    <Appbutton>+ Add Feedback</Appbutton>
+                  </Link>
+                </div>
+              )}
+              {(matches || SmallScreen) && (
+                <div style={{ marginLeft: '27%' }}>
+                  <Link href="/feedback" underline="none">
+                    <Appbutton>+ Add Feedback</Appbutton>
+                  </Link>
+                </div>
+              )}
             </Toolbar>
           </AppBar>
         </Box>

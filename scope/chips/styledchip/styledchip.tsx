@@ -17,7 +17,18 @@ export function Styledchip({ children }: StyledchipProps) {
           bgcolor: 'hsl(231, 100%, 97%)',
           color: 'hsl(230, 76%, 59%)',
           borderRadius: '10px',
-          m: 0.5,
+          m: {
+            xs: -3.5,
+            sm: 0.5,
+            md: 0.5,
+            lg: 0.5,
+          },
+          mt: {
+            xs: 0.1,
+            sm: 0.1,
+            md: 0,
+            lg: 0,
+          },
           ':hover': {
             bgcolor: 'hsl(230, 76%, 59%)',
             color: 'hsl(0, 0%, 100%)',

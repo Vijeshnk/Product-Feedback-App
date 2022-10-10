@@ -6,12 +6,14 @@ import { Stack, useMediaQuery, useTheme } from '@mui/material';
 import ChipGroup from '../components/ChipGroup';
 import TagCardComponent from '../components/TagCardComponent';
 import { Container } from '@mui/material';
+import MobileHeader from '../components/MobileHeader';
 
 type Props = {};
 
 const Home = (props: Props) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <>
       <Container>
@@ -22,6 +24,7 @@ const Home = (props: Props) => {
             {!matches && <Roadmap />}
           </Stack>
           <Stack direction="column">
+            {matches && <MobileHeader />}
             <Dropdownnavbar />
             <TagCardComponent />
           </Stack>
