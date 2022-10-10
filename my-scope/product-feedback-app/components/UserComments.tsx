@@ -19,15 +19,16 @@ type Props = {
     voteCount: number;
     commentCount: number;
     comments: {
-      map(arg0: (comment: any) => JSX.Element): React.ReactNode;
-      comment_id: number;
+      filter(arg0: (item: any) => any): unknown;
+      map(arg0: (comment: any) => JSX.Element | undefined): React.ReactNode;
+      comment_id: string;
       name: string;
       username: string;
       comment: string;
       imgsrc: any;
       replies: {
         map(arg0: (replyingUser: any) => void): JSX.Element;
-        reply_id: number;
+        reply_id: string;
         name: string;
         username: string;
         comment: string;
@@ -38,15 +39,18 @@ type Props = {
 };
 
 const UserComments = ({ tagItem }: Props) => {
-  // const firstComment = tagItem.comments.slice(0, 1);
-  // const userComment = tagItem.comments.slice(1, tagItem.commentCount + 1);
-
   const [reply, setReply] = useState(false);
-  // const [replyValue, setReplyValue] = useState('Reply');
+  const [replyValue, setReplyValue] = useState(0);
 
-  const handleReply = () => {
-    setReply(!reply);
+  const handleReply = (id) => {
+    console.log(id);
+    id ? (setReply(!reply), setReplyValue(id)) : null;
   };
+
+  // const handleReplyValue = () => {
+  //   setReplyValue(!reply);
+  //   console.log(replyValue);
+  // };
 
   return (
     <Container>
@@ -88,22 +92,23 @@ const UserComments = ({ tagItem }: Props) => {
                     sx={{
                       color: 'hsl(230, 76%, 59%)',
                       position: 'absolute',
-                      right: '25%',
+                      right: '27%',
                       mt: '4',
                       fontWeight: 550,
                       fontFamily: 'Jost',
                       textTransform: 'capitalize',
                     }}
-                    onClick={handleReply}
+                    onClick={() => handleReply(comment.comment_id)}
                   >
-                    {reply ? 'Cancel' : 'Reply'}
+                    {reply && replyValue == comment.comment_id
+                      ? 'Cancel'
+                      : 'Reply'}
                   </Button>
                 </Stack>
-                {reply ? (
-                  <span>
-                    <PostReply />
-                  </span>
+                {replyValue == comment.comment_id && reply ? (
+                  <PostReply />
                 ) : null}
+                {console.log(comment.comment_id)}
               </div>
 
               {comment.replies
@@ -138,17 +143,24 @@ const UserComments = ({ tagItem }: Props) => {
                               sx={{
                                 color: 'hsl(230, 76%, 59%)',
                                 position: 'absolute',
-                                right: '25%',
+                                right: '27%',
                                 mt: -10,
                                 fontWeight: 550,
                                 fontFamily: 'Jost',
                                 textTransform: 'capitalize',
                               }}
+                              onClick={() => handleReply(replyingUser.reply_id)}
                             >
-                              Reply
+                              {reply && replyValue == replyingUser.reply_id
+                                ? 'Cancel'
+                                : 'Reply'}
                             </Button>
                           </div>
                         </Stack>
+                        {replyValue == replyingUser.reply_id && reply ? (
+                          <PostReply />
+                        ) : null}
+                        {console.log(replyingUser.reply_id)}
                       </div>
                     );
                   })

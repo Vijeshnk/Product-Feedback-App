@@ -12,15 +12,16 @@ type Props = {
     voteCount: number;
     commentCount: number;
     comments: {
-      map(arg0: (comment: any) => JSX.Element): React.ReactNode;
-      comment_id: number;
+      filter(arg0: (item: any) => any): unknown;
+      map(arg0: (comment: any) => JSX.Element | undefined): React.ReactNode;
+      comment_id: string;
       name: string;
       username: string;
       comment: string;
       imgsrc: any;
       replies: {
         map(arg0: (replyingUser: any) => void): JSX.Element;
-        reply_id: number;
+        reply_id: string;
         name: string;
         username: string;
         comment: string;
