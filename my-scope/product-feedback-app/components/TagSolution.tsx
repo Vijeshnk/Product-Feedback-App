@@ -1,4 +1,11 @@
-import { Card, Typography, Stack } from '@mui/material';
+import {
+  Card,
+  Typography,
+  Stack,
+  CardContent,
+  CardHeader,
+  Box,
+} from '@mui/material';
 import React from 'react';
 import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
@@ -30,9 +37,31 @@ const TagSolution = ({ tagItem }: Props) => {
     <Card
       key={tagItem.id}
       sx={{
-        ml: 4,
+        ml: {
+          xs: 2,
+          sm: 2,
+          md: 1,
+          lg: 1,
+        },
         mt: 3,
-        pb: 1.5,
+        pb: {
+          xs: 3,
+          sm: 3,
+          md: 1.5,
+          lg: 1.5,
+        },
+        mr: {
+          xs: '20%',
+          sm: '20%',
+          md: 0,
+          lg: 0,
+        },
+        width: {
+          xs: '70%',
+          sm: '70%',
+          md: '102%',
+          lg: '102%',
+        },
         borderRadius: '10px',
         boxShadow: 'none',
       }}
@@ -42,6 +71,7 @@ const TagSolution = ({ tagItem }: Props) => {
         sx={{ ':hover': { color: '#fff' } }}
         onClick={() => handleNavigation({ tagItem })}
       >
+        {' '}
         <TagCardSolution tagItem={tagItem} />
       </CardActionArea>
     </Card>

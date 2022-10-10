@@ -45,7 +45,7 @@ const AddCommentBox = (props: Props) => {
             >
               225 characters left
             </Typography>
-            <div style={{ position: 'absolute', right: '24%' }}>
+            <div style={{ position: 'absolute', right: '27%' }}>
               <Appbutton>Post Comment</Appbutton>
             </div>
           </Stack>

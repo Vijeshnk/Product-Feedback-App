@@ -1,5 +1,11 @@
-import { Typography, Stack } from '@mui/material';
-import React from 'react';
+import {
+  Typography,
+  Stack,
+  Button,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import React, { useState } from 'react';
 import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
 import { Commenticon } from '@myorg/product_feedback.scope.icons.commenticon';
@@ -15,15 +21,47 @@ type Props = {
 };
 
 const TagCardSolution = ({ tagItem }: Props) => {
+  const [isActive, setIsActive] = useState(false);
+  const [count, setCount] = useState(tagItem.voteCount);
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const handleCount = () => {
+    setIsActive(!isActive);
+    !isActive ? setCount(tagItem.voteCount + 1) : setCount(tagItem.voteCount);
+  };
+
   return (
     <Stack direction="row">
       <Stack sx={{ marginTop: 3, marginLeft: 3 }}>
-        <Votebutton>{tagItem.voteCount}</Votebutton>
+        <div
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            handleCount();
+          }}
+        >
+          {!matches && (
+            <Votebutton
+              isActive
+              onClick={handleCount}
+              // onMouseDown={(event) => event.stopPropagation()}
+            >
+              {count}
+            </Votebutton>
+          )}
+        </div>
       </Stack>
       <Stack direction="column">
         <Typography
           sx={{
-            ml: 6,
+            ml: {
+              xs: 2,
+              sm: 2,
+              md: 6,
+              lg: 6,
+            },
             mt: 3,
             fontSize: '1.2rem',
             fontWeight: 650,
@@ -35,7 +73,12 @@ const TagCardSolution = ({ tagItem }: Props) => {
         </Typography>
         <Typography
           sx={{
-            ml: 6,
+            ml: {
+              xs: 2,
+              sm: 2,
+              md: 6,
+              lg: 6,
+            },
             mt: 0.5,
             fontSize: '1rem',
             color: 'primary.main',
@@ -56,15 +99,28 @@ const TagCardSolution = ({ tagItem }: Props) => {
           <Styledchip>{tagItem.chipName}</Styledchip>
         </div>
       </Stack>
-      <div
-        style={{
-          color: '#000',
-          marginTop: '7%',
-          marginLeft: '18rem',
-        }}
-      >
-        <Commenticon>{tagItem.commentCount}</Commenticon>
-      </div>
+      {!matches && (
+        <div
+          style={{
+            color: '#000',
+            marginTop: '7%',
+            marginLeft: '18rem',
+          }}
+        >
+          <Commenticon>{tagItem.commentCount}</Commenticon>
+        </div>
+      )}
+      {matches && (
+        <div
+          style={{
+            color: '#000',
+            marginTop: '25%',
+            marginRight: '3rem',
+          }}
+        >
+          <Commenticon>{tagItem.commentCount}</Commenticon>
+        </div>
+      )}
     </Stack>
   );
 };
