@@ -25,10 +25,19 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
 
   return (
     <Grid container>
+      
+     
+          <Grid  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justifyContent="center" sx={{marginBottom:10}} >
+      <Paper sx={{ mt: 18,pb:8, borderRadius: 3,minWidth:'50%' }}>
+
       <Link
         href="/"
         underline="none"
-        sx={{ position: 'relative', left: 320, top: 120 }}
+        sx={{ position: 'relative', left: 5, bottom: 100 }}
       >
         <Typography
           sx={{
@@ -45,22 +54,18 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
           Go Back
         </Typography>
       </Link>
-      <ImageList sx={{ position: 'relative', left: '300px', top: '185px' }}>
+
+      <ImageList sx={{ position: 'relative', left: '40px', bottom: '75px' }}>
         <img src="https://product-feedback-app-jay.netlify.app/static/media/icon-new-feedback.de9414c7.svg" />
       </ImageList>
-          <Grid  container
-  spacing={0}
-  direction="column"
-  alignItems="center"
-  justifyContent="center" sx={{marginBottom:10}} >
-      <Paper sx={{ mt: 18,pb:8, borderRadius: 3,minWidth:'50%' }}>
         <Typography
           sx={{
             fontSize: 22,
-            pt: 5,
             ml: 5,
             fontWeight: 'bold',
             color: '#3A4373',
+            position:'relative',
+            bottom:'50px'
           }}
         >
           Create New Feedback
