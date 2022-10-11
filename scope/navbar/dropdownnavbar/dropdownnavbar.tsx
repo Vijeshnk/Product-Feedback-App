@@ -182,7 +182,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 </div>
               )}
               {(matches || SmallScreen) && (
-                <div style={{ marginLeft: '27%' }}>
+                <div style={{ marginLeft: '20%' }}>
                   <Link href="/feedback" underline="none">
                     <Appbutton>+ Add Feedback</Appbutton>
                   </Link>
