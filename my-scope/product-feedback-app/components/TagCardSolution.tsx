@@ -34,7 +34,17 @@ const TagCardSolution = ({ tagItem }: Props) => {
   };
 
   return (
-    <Stack direction="row">
+    <Stack
+      // direction="row"
+      sx={{
+        flexDirection: {
+          xs: 'row',
+          sm: 'row',
+          md: 'column',
+          lg: 'row',
+        },
+      }}
+    >
       <Stack sx={{ marginTop: 3, marginLeft: 3 }}>
         {!matches && (
           <div
@@ -126,8 +136,8 @@ const TagCardSolution = ({ tagItem }: Props) => {
         <div
           style={{
             color: '#000',
-            marginTop: '38%',
-            marginRight: '3rem',
+            marginTop: '25%',
+            marginRight: '-20%',
           }}
         >
           <Commenticon>{tagItem.commentCount}</Commenticon>

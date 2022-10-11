@@ -175,7 +175,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 </Menu>
               </FormControl>
               {!matches && (
-                <div style={{ marginLeft: '18rem' }}>
+                <div style={{ marginLeft: '17rem' }}>
                   <Link href="/feedback" underline="none">
                     <Appbutton>+ Add Feedback</Appbutton>
                   </Link>

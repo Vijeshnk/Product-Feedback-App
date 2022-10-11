@@ -15,8 +15,8 @@ export function ProductFeedbackAppApp() {
       values: {
         xs: 0, // phone
         sm: 700, // tablets
-        md: 950, // small laptop
-        lg: 1200, // desktop
+        md: 1165, // small laptop
+        lg: 1165, // desktop
         xl: 1536, // large screens
       },
     },

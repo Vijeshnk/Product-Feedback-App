@@ -13,22 +13,39 @@ type Props = {};
 const Home = (props: Props) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const MediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <>
       <Container>
-        <Stack direction="row" sx={{ mb: '10px' }}>
-          <Stack direction="column">
-            {!matches && <Feedbackboard />}
-            {!matches && <ChipGroup />}
-            {!matches && <Roadmap />}
+        {!MediumScreen && (
+          <Stack direction="row" sx={{ mb: '10px' }}>
+            <Stack direction="column">
+              {!matches && <Feedbackboard />}
+              {!matches && <ChipGroup />}
+              {!matches && <Roadmap />}
+            </Stack>
+            <Stack direction="column">
+              {matches && <MobileHeader />}
+              <Dropdownnavbar />
+              <TagCardComponent />
+            </Stack>
           </Stack>
-          <Stack direction="column">
-            {matches && <MobileHeader />}
-            <Dropdownnavbar />
-            <TagCardComponent />
+        )}
+        {MediumScreen && (
+          <Stack direction="column" sx={{ mb: '10px' }}>
+            <Stack direction="row">
+              {!matches && <Feedbackboard />}
+              {!matches && <ChipGroup />}
+              {!matches && <Roadmap />}
+            </Stack>
+            <Stack direction="column">
+              {matches && <MobileHeader />}
+              <Dropdownnavbar />
+              <TagCardComponent />
+            </Stack>
           </Stack>
-        </Stack>
+        )}
       </Container>
     </>
   );
