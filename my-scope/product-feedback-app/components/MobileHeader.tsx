@@ -33,7 +33,6 @@ const MobileHeader = (props: Props) => {
   const sideList = (
     <div>
       <Roadmap />
-      <ChipGroup />
     </div>
   );
   return (
