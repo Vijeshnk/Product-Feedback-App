@@ -15,6 +15,7 @@ importers:
       '@material-ui/icons': 4.11.3
       '@mui/icons-material': 5.10.6
       '@mui/material': 5.10.7
+      '@mui/styles': 5.10.8
       '@teambit/eslint-config-bit-react': ~0.0.367
       '@testing-library/react': ^12.1.5
       '@types/jest': '>=26.0.0 <27.0.0'
@@ -47,6 +48,7 @@ importers:
       '@material-ui/icons': registry.npmjs.org/@material-ui/icons/4.11.3_dv5todbj26s6bzq6pxmgdoqaii
       '@mui/icons-material': registry.npmjs.org/@mui/icons-material/5.10.6_7yu2i4c6xclswgqw7psnxwvrjy
       '@mui/material': registry.npmjs.org/@mui/material/5.10.7_c6qugj3z5tv63b4vyg6k5kxs7y
+      '@mui/styles': registry.npmjs.org/@mui/styles/5.10.8_pxzommwrsowkd4kgag6q3sluym
       '@teambit/eslint-config-bit-react': registry.npmjs.org/@teambit/eslint-config-bit-react/0.0.367_ila2odovlggsd4ks6hgtkp6zma
       '@testing-library/react': registry.npmjs.org/@testing-library/react/12.1.5_sfoxds7t5ydpegc3knd667wn6m
       '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/4.29.3
@@ -987,6 +989,42 @@ packages:
       '@emotion/react': registry.npmjs.org/@emotion/react/11.10.4_pxzommwrsowkd4kgag6q3sluym
       '@emotion/styled': registry.npmjs.org/@emotion/styled/11.10.4_2ouydixtphow5rli3xzdyewxza
       csstype: registry.npmjs.org/csstype/3.1.1
+      prop-types: registry.npmjs.org/prop-types/15.8.1
+      react: registry.npmjs.org/react/17.0.2
+    dev: false
+
+  registry.npmjs.org/@mui/styles/5.10.8_pxzommwrsowkd4kgag6q3sluym:
+    resolution: {integrity: sha512-aQGfz4Av12Bf0C8sJC0a7UoTbusD0IUKo4zNjkB5ERmhIFrbgN1G8XDIVvTgrgwdKbstbFlHDFfXkDcYe9elSQ==, registry: https://node.bit.cloud/, tarball: https://registry.npmjs.org/@mui/styles/-/styles-5.10.8.tgz}
+    id: registry.npmjs.org/@mui/styles/5.10.8
+    name: '@mui/styles'
+    version: 5.10.8
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@babel/runtime': registry.npmjs.org/@babel/runtime/7.19.0
+      '@emotion/hash': registry.npmjs.org/@emotion/hash/0.9.0
+      '@mui/private-theming': registry.npmjs.org/@mui/private-theming/5.10.6_pxzommwrsowkd4kgag6q3sluym
+      '@mui/types': registry.npmjs.org/@mui/types/7.2.0_@types+react@17.0.50
+      '@mui/utils': registry.npmjs.org/@mui/utils/5.10.6_react@17.0.2
+      '@types/react': registry.npmjs.org/@types/react/17.0.50
+      clsx: registry.npmjs.org/clsx/1.2.1
+      csstype: registry.npmjs.org/csstype/3.1.1
+      hoist-non-react-statics: registry.npmjs.org/hoist-non-react-statics/3.3.2
+      jss: registry.npmjs.org/jss/10.9.2
+      jss-plugin-camel-case: registry.npmjs.org/jss-plugin-camel-case/10.9.2
+      jss-plugin-default-unit: registry.npmjs.org/jss-plugin-default-unit/10.9.2
+      jss-plugin-global: registry.npmjs.org/jss-plugin-global/10.9.2
+      jss-plugin-nested: registry.npmjs.org/jss-plugin-nested/10.9.2
+      jss-plugin-props-sort: registry.npmjs.org/jss-plugin-props-sort/10.9.2
+      jss-plugin-rule-value-function: registry.npmjs.org/jss-plugin-rule-value-function/10.9.2
+      jss-plugin-vendor-prefixer: registry.npmjs.org/jss-plugin-vendor-prefixer/10.9.2
       prop-types: registry.npmjs.org/prop-types/15.8.1
       react: registry.npmjs.org/react/17.0.2
     dev: false

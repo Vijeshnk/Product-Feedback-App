@@ -5,7 +5,6 @@ import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 type Props = {};
 
 const ChipGroup = (props: Props) => {
-  const [chip, setChip] = useState(false);
   const chipSet = ['All', 'UI', 'UX', 'Enhancement', 'Bug', 'Feature'];
   return (
     <>
