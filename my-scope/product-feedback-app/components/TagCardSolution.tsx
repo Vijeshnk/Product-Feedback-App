@@ -136,8 +136,8 @@ const TagCardSolution = ({ tagItem }: Props) => {
         <div
           style={{
             color: '#000',
-            marginTop: '25%',
-            marginRight: '-20%',
+            marginTop: '42%',
+            marginRight: '20%',
           }}
         >
           <Commenticon>{tagItem.commentCount}</Commenticon>
