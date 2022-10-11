@@ -15,14 +15,18 @@ export type RoadmapProps = {
 
 export function Roadmap({ children }: RoadmapProps) {
   return (
-    <div>
-      <Card
+    <div style={{ }}> {/* should be applied to tablet */}
+      <Card 
         sx={{
           width: 260,
-          height: 170,
+          // marginLeft:'100px',
+          height: {xs:170,sm:260,md:170,lg:170},
+          mt:{xs: 3, sm: 3,md:5, lg:3},
+          ml: {xs: 0, sm: 10, md: 50, lg: 0},
           borderRadius: '10px',
-          mt: 3,
+          
           boxShadow: 'none',
+         
         }}
       >
         <CardContent>

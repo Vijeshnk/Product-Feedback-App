@@ -65,7 +65,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
       <ThemeProvider theme={theme}>
         <Box
           sx={{
-            mt: { xs: 19, sm: 12, md: 12, lg: 12 },
+            mt: { xs: 19, sm: 10, md: 12, lg: 12 },
             ml: 4,
             flexGrow: 1,
           }}
