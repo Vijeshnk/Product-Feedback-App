@@ -54,6 +54,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
+    console.log(event.currentTarget);
   };
 
   const handleFunctions = (event) => {
@@ -175,7 +176,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 </Menu>
               </FormControl>
               {!matches && (
-                <div style={{ marginLeft: '17rem' }}>
+                <div style={{ marginLeft: '16rem' }}>
                   <Link href="/feedback" underline="none">
                     <Appbutton>+ Add Feedback</Appbutton>
                   </Link>

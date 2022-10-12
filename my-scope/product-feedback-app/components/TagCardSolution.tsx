@@ -12,6 +12,7 @@ import { Commenticon } from '@myorg/product_feedback.scope.icons.commenticon';
 import ToggleButton from './ToggleButton';
 type Props = {
   tagItem: {
+    sort(arg0: (a: any, b: any) => number): unknown;
     id: number;
     heading: string;
     tagline: string;
@@ -136,7 +137,7 @@ const TagCardSolution = ({ tagItem }: Props) => {
         <div
           style={{
             color: '#000',
-            marginTop: '42%',
+            marginTop: 170,
             marginRight: '20%',
           }}
         >

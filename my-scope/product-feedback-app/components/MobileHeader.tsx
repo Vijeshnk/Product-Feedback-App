@@ -60,7 +60,7 @@ const MobileHeader = (props: Props) => {
               sx: { width: '60%' },
             }}
           >
-            <div style={{ marginLeft: 33 }}>{sideList}</div>
+            <div style={{ marginLeft: 30 }}>{sideList}</div>
           </Drawer>
           <Card
             sx={{
