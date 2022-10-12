@@ -17,7 +17,14 @@ export type FeedbackdropdownProps = {
 };
 
 export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
+
+  const [feedback,setFeedback] =React.useState([])
+
+
   const [age, setAge] = React.useState('');
+  const [title,setTitle] = React.useState('')
+  const [category,setCategory] = React.useState('')
+  const [detail,setDetail] = React.useState('')
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
@@ -86,7 +93,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         >
           Add a short, descriptive headline
         </Typography>
-        <TextField   inputProps={{
+        <TextField onChange={(e)=>setTitle(e.target.value)} value={title} inputProps={{
     maxLength: 50
   }}
           sx={{position:'relative',top:'10px',left:"42px",minWidth:'85%',backgroundColor: '#F7F8FD',}}
@@ -112,7 +119,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         {/* dropdown  */}
        
           <FormControl sx={{position:'relative',top:'10px',left:"42px",width:"85%",backgroundColor: '#F7F8FD'}}>
-            <Select value={age} onChange={handleChange}>
+            <Select value={age} onChange={handleChange} >
               <MenuItem
                 sx={{
                   ':hover': {
@@ -189,7 +196,7 @@ export function Feedbackdropdown({ children }: FeedbackdropdownProps) {
         </Typography>
 
         {/* Feedback details */}
-        <TextField
+        <TextField onChange={(e)=>setDetail(e.target.value)} value={detail}
           inputProps={{
             maxLength: 255
           }}
