@@ -56,12 +56,20 @@ export const Feedbackdropdown: React.FC = () => {
       detail: detail,
     };
 
-    setFeedbacks([...(feedbacks || []), feedback]);
+    setFeedbacks([...feedbacks, feedback]);
 
     setTitle('');
     setCategory('');
     setDetail('');
-    console.log(feedbacks);
+    
+  };
+  //delete feedback from localstorage
+
+  const deleteFeedback = (title) => {
+    const filteredFoodbacks = feedbacks.filter((element, index) => {
+      return element.title !== title;
+    });
+    setFeedbacks(filteredFoodbacks);
   };
 
   //saving data to local storage
@@ -280,7 +288,10 @@ export const Feedbackdropdown: React.FC = () => {
           </form>
         </Paper>
         <Box>
-          <FeedbackOutput feedbacks={feedbacks} />
+          <FeedbackOutput
+            feedbacks={feedbacks}
+            deleteFeedback={deleteFeedback}
+          />
         </Box>
       </Grid>
     </Grid>

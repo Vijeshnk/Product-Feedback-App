@@ -1,18 +1,18 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-type Props = {}
-
- const FeedbackOutput = ({feedbacks}) => {
-  return feedbacks.map(feedback =>(
+const FeedbackOutput = ({ feedbacks, deleteFeedback }) => {
+  return feedbacks.map((feedback) => (
     <Card key={feedback.title}>
       <td>{feedback.title}</td>
       <td>{feedback.detail}</td>
       <td>{feedback.category}</td>
+      <td onClick={() => deleteFeedback(feedback.title)}>
+        <DeleteIcon />
+      </td>
     </Card>
-  ))
-    
-  
-}
+  ));
+};
 
-export default FeedbackOutput
+export default FeedbackOutput;
