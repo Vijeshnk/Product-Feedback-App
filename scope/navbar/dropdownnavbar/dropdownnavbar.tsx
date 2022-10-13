@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { createContext, ReactNode } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,14 +13,9 @@ import { Divider } from '@mui/material';
 import { Button } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import TagCardComponent from '@my-org/my-scope.product-feedback-app/components/TagCardComponent';
+import { useLocation } from 'react-router-dom';
 
-let theme = createTheme({
-  palette: {
-    primary: {
-      main: '#373f68',
-    },
-  },
-});
 export type DropdownnavbarProps = {
   /**
    * a node to be rendered in the special component.
@@ -30,6 +25,7 @@ export type DropdownnavbarProps = {
 
 export function Dropdownnavbar({ children }: DropdownnavbarProps) {
   const [commentValue, setcommentValue] = React.useState('Most Upvotes');
+  const [dropDownActive, setdropDownActive] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -39,6 +35,8 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
 
   const handleChange = (event) => {
     setcommentValue(event.target.id);
+    localStorage.setItem('commentValue', event.target.id);
+    setTimeout('location.reload();', 500);
   };
 
   const handleClose = () => {
@@ -52,7 +50,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
     );
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     console.log(event.currentTarget);
   };
@@ -80,7 +78,12 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 lg: 'static',
               },
               top: { xs: 85, sm: 0, md: 0, lg: 0 },
-              borderRadius: { xs: 'none', sm: '10px', md: '10px', lg: '10px' },
+              borderRadius: {
+                xs: 'none',
+                sm: '10px',
+                md: '10px',
+                lg: '10px',
+              },
               boxShadow: 'none',
             }}
           >
@@ -118,7 +121,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                       fontWeight: 700,
                     }}
                   >
-                    {commentValue}
+                    {localStorage.getItem('commentValue')}
                   </Typography>
                 </Button>
                 <Menu open={open} onClick={handleClose} anchorEl={anchorEl}>
@@ -176,7 +179,7 @@ export function Dropdownnavbar({ children }: DropdownnavbarProps) {
                 </Menu>
               </FormControl>
               {!matches && (
-                <div style={{ marginLeft: '16rem' }}>
+                <div style={{ marginLeft: '15rem' }}>
                   <Link href="/feedback" underline="none">
                     <Appbutton>+ Add Feedback</Appbutton>
                   </Link>

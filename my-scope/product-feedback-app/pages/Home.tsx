@@ -1,7 +1,7 @@
 import { Dropdownnavbar } from '@product_feedback/scope.navbar.dropdownnavbar';
 import { Feedbackboard } from '@product_feedback/scope.cards.feedbackboard';
 import { Roadmap } from '@product_feedback/scope.cards.roadmap';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Stack, useMediaQuery, useTheme } from '@mui/material';
 import ChipGroup from '../components/ChipGroup';
 import TagCardComponent from '../components/TagCardComponent';
@@ -26,7 +26,6 @@ const Home = (props: Props) => {
               {!matches && <Roadmap />}
             </Stack>
             <Stack direction="column">
-              {matches && <MobileHeader />}
               <Dropdownnavbar />
               <TagCardComponent />
             </Stack>

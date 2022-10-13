@@ -10,9 +10,9 @@ import { Styledchip } from '@product_feedback/scope.chips.styledchip';
 import { Votebutton } from '@myorg/product_feedback.scope.buttons.votebutton';
 import { Commenticon } from '@myorg/product_feedback.scope.icons.commenticon';
 import ToggleButton from './ToggleButton';
+
 type Props = {
   tagItem: {
-    sort(arg0: (a: any, b: any) => number): unknown;
     id: number;
     heading: string;
     tagline: string;
