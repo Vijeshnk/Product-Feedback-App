@@ -1,11 +1,20 @@
 import React, { ChangeEvent } from 'react';
 
-import { Box, Grid, Link, Paper, TextField, Typography } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Link,
+  Paper,
+  Select,
+  TextField,
+  Typography,
+} from '@mui/material';
 import Button from '@mui/material/Button';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ImageList from '@mui/material/ImageList';
 import { IFeedback } from './interfaces';
 import FeedbackOutput from './FeedbackOutput';
+import MenuItem from '@mui/material/MenuItem';
 
 const boxSX = {
   '&:hover': {
@@ -61,7 +70,6 @@ export const Feedbackdropdown: React.FC = () => {
     setTitle('');
     setCategory('');
     setDetail('');
-    
   };
   //delete feedback from localstorage
 
@@ -175,24 +183,74 @@ export const Feedbackdropdown: React.FC = () => {
               Choose a category for your feedback
             </Typography>
 
-            <select
-              style={{
+            <Select
+              sx={{
                 position: 'relative',
                 top: '10px',
                 left: '42px',
                 width: '85%',
                 backgroundColor: '#F7F8FD',
-                height: '55px',
               }}
               name="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option></option>
-              <option>Feature</option>
-              <option>Bug</option>
-              <option>UI</option>
-            </select>
+              <MenuItem
+                sx={{
+                  ':hover': {
+                    bgcolor: 'white', // theme.palette.primary.main
+                    color: '#d500f9',
+                  },
+                }}
+                value="Feature"
+              >
+                Feature
+              </MenuItem>
+              <MenuItem
+                sx={{
+                  ':hover': {
+                    bgcolor: 'white', // theme.palette.primary.main
+                    color: '#d500f9',
+                  },
+                }}
+                value="UI"
+              >
+                UI
+              </MenuItem>
+              <MenuItem
+                sx={{
+                  ':hover': {
+                    bgcolor: 'white', // theme.palette.primary.main
+                    color: '#d500f9',
+                  },
+                }}
+                value="UX"
+              >
+                UX
+              </MenuItem>
+              <MenuItem
+                sx={{
+                  ':hover': {
+                    bgcolor: 'white', // theme.palette.primary.main
+                    color: '#d500f9',
+                  },
+                }}
+                value="Enhancement"
+              >
+                Enhancement
+              </MenuItem>
+              <MenuItem
+                sx={{
+                  ':hover': {
+                    bgcolor: 'white', // theme.palette.primary.main
+                    color: '#d500f9',
+                  },
+                }}
+                value="Bug"
+              >
+                Bug
+              </MenuItem>
+            </Select>
             <Typography
               sx={{
                 fontSize: 15,
@@ -252,6 +310,7 @@ export const Feedbackdropdown: React.FC = () => {
               }}
             >
               <Button
+                href="/"
                 style={{
                   borderRadius: '10px',
                   backgroundColor: '#3a4374',
