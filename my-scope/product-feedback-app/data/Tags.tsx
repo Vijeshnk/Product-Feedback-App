@@ -140,4 +140,4 @@ export const Tags = [
   },
 ];
 
-localStorage.setItem('Tags', JSON.stringify('Tags'));
+localStorage.setItem('Tags', JSON.stringify(Tags));

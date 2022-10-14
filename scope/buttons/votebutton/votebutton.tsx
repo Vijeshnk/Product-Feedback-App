@@ -50,6 +50,7 @@ export function Votebutton({ children, isActive, onClick }: VotebuttonProps) {
       <ColorButton variant="contained" size="small" onClick={toggleActivity}>
         <Stack direction="column" sx={{ placeItems: 'center' }}>
           <div>
+            {/* JSON.parse(localStorage.getItem('isVoteBtnActive') */}
             {isActive ? (
               <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
                 <path

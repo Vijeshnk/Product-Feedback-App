@@ -25,13 +25,28 @@ type Props = {
 const TagCardSolution = ({ tagItem }: Props) => {
   const [isActive, setIsActive] = useState(false);
   const [count, setCount] = useState(tagItem.voteCount);
+  // localStorage.setItem('voteCount', JSON.stringify(count) || '');
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleCount = () => {
     setIsActive(!isActive);
-    !isActive ? setCount(tagItem.voteCount + 1) : setCount(tagItem.voteCount);
+    // localStorage.setItem('isVoteBtnActive', JSON.stringify(!isActive) || '');
+    {
+      console.log(count);
+    }
+    !isActive
+      ? setCount(tagItem.voteCount + 1)
+      : // localStorage.setItem(
+        //   'voteCount',
+        //   JSON.stringify(tagItem.voteCount + 1)
+        // )
+        setCount(tagItem.voteCount);
+    // localStorage.setItem('voteCount', JSON.stringify(tagItem.voteCount))
+    {
+      console.log(count);
+    }
   };
 
   return (
@@ -60,6 +75,8 @@ const TagCardSolution = ({ tagItem }: Props) => {
               onClick={handleCount}
               // onMouseDown={(event) => event.stopPropagation()}
             >
+              {/* {count} */}
+              {/* {JSON.parse(localStorage.getItem('voteCount') || '')} */}
               {count}
             </Votebutton>
           </div>
