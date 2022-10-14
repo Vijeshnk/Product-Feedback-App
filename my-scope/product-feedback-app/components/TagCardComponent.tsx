@@ -1,11 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { Tags } from '../data/Tags';
 import TagSolution from './TagSolution';
 import { Container } from '@mui/material';
 
-const SortTagItems = () => {
+const SortTagItems = (Tags) => {
   const comment = localStorage.getItem('commentValue');
-  // const Tags = JSON.parse(localStorage.getItem('Tags') || '');
   console.log(Tags);
   switch (comment) {
     case 'Most Upvotes': {
@@ -28,10 +26,10 @@ const SortTagItems = () => {
 };
 
 const TagCardComponent = () => {
-  // localStorage.setItem('Tags', JSON.stringify(Tags));
+  const Tags = JSON.parse(localStorage.getItem('Tags') || '');
   return (
     <>
-      {SortTagItems()}
+      {SortTagItems(Tags)}
       {Tags.map((tagItem) => {
         return (
           <Container key={tagItem.id}>
