@@ -5,6 +5,7 @@ import UserComments from './UserComments';
 
 type Props = {
   tagItem: {
+    sort(arg0: (a: any, b: any) => number): unknown;
     id: number;
     heading: string;
     tagline: string;
